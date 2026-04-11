@@ -101,15 +101,22 @@ def fetch_ted_europe() -> list:
     tenders = []
 
     # 国家代码 → 中文名映射（TED 使用 ISO 3166-1 Alpha-3）
+    # 按2025年新增装机排名：DE > ES > FR > IT > NL > PL > ROU > AT > GR > BGR
     EU_COUNTRIES = {
-        "DEU": "德国",
-        "AUT": "奥地利",
-        "CHE": "瑞士",
-        "ITA": "意大利",
-        "ESP": "西班牙",
-        "POL": "波兰",
+        "DEU": "德国",       # #1 — 16.7GW (2024)
+        "ESP": "西班牙",     # #2 — 7.5GW
+        "FRA": "法国",       # #3 — 超越意大利
+        "ITA": "意大利",     # #4
+        "NLD": "荷兰",       # #8 — 人均装机欧洲第一
+        "POL": "波兰",       # 中东欧最大市场
+        "ROU": "罗马尼亚",   # 增速最快，首次进前十
+        "AUT": "奥地利",     # 人均装机超1kW
+        "GRC": "希腊",       # 1.9GW(2025)，人均第四
+        "BGR": "保加利亚",   # 首次进前十
+        "PRT": "葡萄牙",     # 2026-2030高增长
         "CZE": "捷克",
-        "ROU": "罗马尼亚",
+        "CHE": "瑞士",       # 非EU但在TED覆盖范围
+        "HUN": "匈牙利",     # 中东欧重要市场
     }
 
     # CPV 代码组合：太阳能 + 储能 + 光伏工程
@@ -149,7 +156,9 @@ def fetch_ted_europe() -> list:
                             if isinstance(title, dict):
                                 # 尝试取对应语言，兜底英语
                                 lang_map = {"DEU":"de","AUT":"de","CHE":"de","ITA":"it",
-                                            "ESP":"es","POL":"pl","CZE":"cs","ROU":"ro"}
+                                            "ESP":"es","POL":"pl","CZE":"cs","ROU":"ro",
+                                            "FRA":"fr","NLD":"nl","GRC":"el","BGR":"bg",
+                                            "PRT":"pt","HUN":"hu"}
                                 lang = lang_map.get(country_code, "en")
                                 title = title.get(lang, title.get("en", str(title)))
 
@@ -686,7 +695,8 @@ def fetch_australia():
 def classify_continent(country):
     m = {
         "europe": ["德国","法国","英国","西班牙","意大利","荷兰","全德国",
-                   "奥地利","瑞士","波兰","捷克","罗马尼亚"],
+                   "奥地利","瑞士","波兰","捷克","罗马尼亚",
+                   "希腊","保加利亚","葡萄牙","匈牙利"],
         "asia": ["越南","印度","泰国","日本","韩国","中国","马来西亚","印度尼西亚","全越南","全印度",
                  "哈里亚纳邦","贾坎德邦","旁遮普邦","奥里萨邦","拉贾斯坦邦"],
         "north_america": ["美国","加拿大","墨西哥","联邦","加州","德州","佛州","纽约","亚利桑那",
