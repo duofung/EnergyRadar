@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11 20:00",
+  "updated_at": "2026-04-11 21:00",
   "europe": [
     {
       "country": "德国",
@@ -180,6 +180,86 @@
       "status": "进行中",
       "source": "TED Europa",
       "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DROU"
+    },
+    {
+      "country": "法国",
+      "location": "法国",
+      "name": "法国 CRE 光伏招标（PPE2 第九轮 地面电站）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DFRA"
+    },
+    {
+      "country": "法国",
+      "location": "法国",
+      "name": "法国 EDF 商业屋顶光伏+储能采购",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D45261215+AND+country%3DFRA"
+    },
+    {
+      "country": "荷兰",
+      "location": "荷兰",
+      "name": "荷兰 SDE++ 可再生能源补贴（光伏+储能 2026轮）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DNLD"
+    },
+    {
+      "country": "荷兰",
+      "location": "荷兰",
+      "name": "荷兰 TenneT 电网储能系统采购",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DNLD"
+    },
+    {
+      "country": "希腊",
+      "location": "希腊",
+      "name": "希腊 RAE 光伏拍卖（2025安装1.9GW，持续采购）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DGRC"
+    },
+    {
+      "country": "保加利亚",
+      "location": "保加利亚",
+      "name": "保加利亚光伏招标（国家复苏基金推动，首次进前十）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DBGR"
+    },
+    {
+      "country": "葡萄牙",
+      "location": "葡萄牙",
+      "name": "葡萄牙 DGEG 光伏拍卖（2026-2030高增长市场）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DPRT"
+    },
+    {
+      "country": "匈牙利",
+      "location": "匈牙利",
+      "name": "匈牙利 MEKH 可再生能源招标（中东欧重要市场）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED Europa",
+      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DHUN"
     }
   ],
   "asia": [
