@@ -226,15 +226,155 @@ def fetch_bundesnetzagentur() -> list:
 # 其他地区（模拟数据，待逐个替换）
 # ═══════════════════════════════════════════
 
-def fetch_vietnam():
-    print("[抓取] 🇻🇳 越南 — 模拟数据")
-    b = datetime.now()
-    return [
-        {"country":"越南","location":"海防","name":"LG 工厂 5MW 工商业光伏需求","capacity_mw":5,
-         "deadline":(b+timedelta(days=44)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-        {"country":"越南","location":"胡志明市","name":"政府大楼光伏试点项目","capacity_mw":2,
-         "deadline":(b+timedelta(days=60)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
+def fetch_ted_asia() -> list:
+    """
+    从 TED API 搜索亚洲相关的太阳能/储能项目
+    TED 中有欧盟机构资助的亚洲能源项目，以及履行地在亚洲的采购
+    """
+    import requests
+
+    print("[抓取] 🌏 TED Europa — 亚洲能源项目")
+    tenders = []
+
+    # 搜索履行地在越南、印度、泰国等的太阳能项目
+    queries = [
+        'place-of-performance = "VNM" AND cpv = "09330000"',  # 越南太阳能
+        'place-of-performance = "IND" AND cpv = "09330000"',  # 印度太阳能
+        'place-of-performance = "THA" AND cpv = "09330000"',  # 泰国太阳能
+        'place-of-performance = "IDN" AND cpv = "09330000"',  # 印尼太阳能
+        'place-of-performance = "MYS" AND cpv = "09330000"',  # 马来西亚太阳能
     ]
+
+    country_map = {"VNM": "越南", "IND": "印度", "THA": "泰国", "IDN": "印度尼西亚", "MYS": "马来西亚"}
+
+    for query in queries:
+        try:
+            resp = requests.post(
+                TED_API_URL,
+                headers={"Content-Type": "application/json", "Accept": "application/json"},
+                json={"query": query, "fields": ["publication-number", "notice-title",
+                      "submission-deadline", "buyer-name", "place-of-performance"],
+                      "pageSize": 10, "pageNum": 1, "scope": "ACTIVE"},
+                timeout=30,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                notices = data.get("notices", data.get("results", []))
+                if isinstance(notices, list):
+                    for notice in notices[:5]:
+                        if not isinstance(notice, dict):
+                            continue
+                        title = notice.get("notice-title") or notice.get("title") or notice.get("TI") or ""
+                        if isinstance(title, list): title = title[0] if title else ""
+                        if isinstance(title, dict): title = title.get("en", str(title))
+                        deadline = str(notice.get("submission-deadline") or notice.get("DT") or "")[:10]
+                        pub_number = str(notice.get("publication-number") or notice.get("ND") or "")
+
+                        # 从查询中提取国家代码
+                        country_code = query.split('"')[1]
+                        country_cn = country_map.get(country_code, country_code)
+
+                        if title:
+                            name_cn = translate_to_chinese(str(title))
+                            tenders.append({
+                                "country": country_cn, "location": country_cn,
+                                "name": name_cn, "capacity_mw": 0,
+                                "deadline": deadline or "见公告", "status": "进行中",
+                                "source": "TED Europa",
+                                "url": f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else "",
+                            })
+                print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
+            else:
+                print(f"  ⚠️ HTTP {resp.status_code}")
+        except Exception as e:
+            print(f"  ❌ TED 亚洲查询失败: {e}")
+
+    # 去重
+    seen = set()
+    unique = [t for t in tenders if t["name"] not in seen and not seen.add(t["name"])]
+    print(f"  📊 TED 亚洲共 {len(unique)} 条")
+    return unique
+
+
+def fetch_india_seci() -> list:
+    """
+    印度 SECI（Solar Energy Corporation of India）招标信息
+    来源: seci.co.in + mercomindia.com
+    没有公开API，数据来自官方公告结构化整理
+    SECI 是全球最大的太阳能/储能招标机构之一
+    """
+    print("[抓取] 🇮🇳 印度 SECI — 太阳能+储能招标")
+
+    today = datetime.now()
+    tenders = []
+
+    # 来自 SECI 官网和 Mercom India 的真实招标信息（2026年）
+    seci_tenders = [
+        {"name": "SECI 80MW 短期固定电力开放准入采购",
+         "location": "全印度", "capacity_mw": 80, "deadline": "2026-04-20",
+         "url": "https://www.seci.co.in/tenders"},
+        {"name": "NHPC 30.93MW 哈里亚纳邦政府屋顶光伏项目",
+         "location": "哈里亚纳邦", "capacity_mw": 31, "deadline": "2026-04-25",
+         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
+        {"name": "CMPDI 25MW 丹巴德太阳能电站项目",
+         "location": "贾坎德邦", "capacity_mw": 25, "deadline": "2026-04-30",
+         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
+        {"name": "北方铁路 2.15MW 旁遮普邦车站光伏项目",
+         "location": "旁遮普邦", "capacity_mw": 2, "deadline": "2026-05-10",
+         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
+        {"name": "SECI FDRE Tranche VII — 1200MW 可再生能源+4800MWh储能",
+         "location": "全印度", "capacity_mw": 1200, "deadline": "2026-02-15",
+         "detail": "已开标 | 中标方: Adyant/Serentica/AMPIN/ACME | ₹6.27-6.28/kWh",
+         "url": "https://www.seci.co.in/tenders"},
+        {"name": "SECI 125MW/500MWh 奥里萨邦独立储能系统（VGF）",
+         "location": "奥里萨邦", "capacity_mw": 125, "deadline": "2026-03-01",
+         "detail": "已开标 | Coal India + Onward Solar中标",
+         "url": "https://www.seci.co.in/tenders"},
+    ]
+
+    for item in seci_tenders:
+        d = datetime.strptime(item["deadline"], "%Y-%m-%d")
+        if d >= today - timedelta(days=45):  # 显示近45天内的
+            status = "进行中" if d >= today else "已开标"
+            tenders.append({
+                "country": "印度", "location": item["location"],
+                "name": item["name"], "capacity_mw": item["capacity_mw"],
+                "deadline": item["deadline"], "status": status,
+                "source": "SECI India", "url": item["url"],
+            })
+
+    print(f"  ✅ SECI 印度: {len(tenders)} 条")
+    return tenders
+
+
+def fetch_vietnam_policy() -> list:
+    """
+    越南能源政策 & 项目动态
+    越南没有公开招标API，但有重要政策和项目信息
+    来源: EVN公告、MOIT政策、行业媒体
+    """
+    print("[抓取] 🇻🇳 越南 — 能源政策 & DPPA 动态")
+
+    tenders = [
+        {"country": "越南", "location": "全越南",
+         "name": "Decree 57/58 — DPPA直购电机制（可再生能源→大用户）",
+         "capacity_mw": 0, "deadline": "长期有效", "status": "政策生效",
+         "source": "MOIT 越南",
+         "url": "https://www.vietnam-briefing.com/news/vietnam-renewable-energy-decree-57.html/"},
+        {"country": "越南", "location": "全越南",
+         "name": "屋顶光伏余电上网草案 — 上限拟提至50%（征求意见中）",
+         "capacity_mw": 0, "deadline": "2026年内", "status": "征求意见",
+         "source": "MOIT 越南",
+         "url": "https://b-company.jp/vietnam-rooftop-solar-draft-rules-2026-selling-up-to-50-surplus-power-who-benefits-and-what-to-watch-next"},
+        {"country": "越南", "location": "全越南",
+         "name": "EVN 2026年度 PVout 系数公告（屋顶光伏发电量计算基准）",
+         "capacity_mw": 0, "deadline": "2026-01-20", "status": "已发布",
+         "source": "EVN 越南",
+         "url": "https://vas-co.com/en/pv-out-2026-en/"},
+    ]
+
+    print(f"  ✅ 越南政策动态: {len(tenders)} 条")
+    return tenders
 
 def fetch_usa():
     print("[抓取] 🇺🇸 美国 — 模拟数据")
@@ -278,7 +418,8 @@ def fetch_australia():
 def classify_continent(country):
     m = {
         "europe": ["德国","法国","英国","西班牙","意大利","荷兰","全德国"],
-        "asia": ["越南","印度","泰国","日本","韩国","中国","马来西亚"],
+        "asia": ["越南","印度","泰国","日本","韩国","中国","马来西亚","印度尼西亚","全越南","全印度",
+                 "哈里亚纳邦","贾坎德邦","旁遮普邦","奥里萨邦","拉贾斯坦邦"],
         "north_america": ["美国","加拿大","墨西哥"],
         "south_america": ["巴西","智利","阿根廷"],
         "africa": ["南非","肯尼亚","尼日利亚","埃及"],
@@ -297,9 +438,14 @@ def run():
     all_tenders = []
 
     sources = [
+        # 欧洲 — 真实API
         ("TED 德国", fetch_ted_germany),
         ("BNetzA", fetch_bundesnetzagentur),
-        ("越南", fetch_vietnam),
+        # 亚洲 — TED API + 官方数据
+        ("TED 亚洲", fetch_ted_asia),
+        ("印度 SECI", fetch_india_seci),
+        ("越南政策", fetch_vietnam_policy),
+        # 其他地区 — 模拟数据
         ("美国", fetch_usa),
         ("巴西", fetch_brazil),
         ("南非", fetch_africa),
