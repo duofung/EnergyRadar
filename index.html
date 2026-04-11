@@ -154,6 +154,20 @@ body::before{
   display:flex;align-items:center;gap:4px;
 }
 
+.tender-source{
+  font-size:11px;font-weight:500;
+  color:var(--accent);
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 10px;
+  border-radius:100px;
+  background:var(--accent-dim);
+  transition:background .2s;
+  margin-left:auto;
+}
+.tender-source:hover{background:rgba(0,212,138,.2)}
+.tender-source svg{width:10px;height:10px}
+
 /* ── Expand Button ── */
 .expand-btn{
   display:none;
@@ -282,12 +296,19 @@ function renderCard(region, tenders) {
         const hidden = i >= VISIBLE_COUNT ? ' hidden' : '';
         const flag = getFlag(t.country || '');
         const delay = `animation-delay:${i * .06}s`;
+        const sourceLink = t.url
+          ? `<a class="tender-source" href="${t.url}" target="_blank" rel="noopener">
+               ${t.source || '查看详情'}
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+             </a>`
+          : (t.source ? `<span class="tender-deadline">${t.source}</span>` : '');
         return `
           <div class="tender-item${hidden}" style="${delay}">
             <div class="tender-name">${flag ? flag + ' ' : ''}【${t.country || t.location || ''}】${t.name}</div>
             <div class="tender-meta">
               ${statusHTML(t.status || '进行中')}
               <span class="tender-deadline">截止日期：${t.deadline || '待定'}</span>
+              ${sourceLink}
             </div>
           </div>`;
       }).join('');
