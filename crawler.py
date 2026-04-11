@@ -555,27 +555,108 @@ def fetch_canada() -> list:
     return tenders
 
 def fetch_brazil():
-    print("[抓取] 🇧🇷 巴西 — 模拟数据")
-    b = datetime.now()
+    """
+    巴西太阳能/储能招标
+    来源: ANEEL + MME (Ministério de Minas e Energia)
+    巴西是拉美最大太阳能市场，2025年装机达65GW
+    """
+    print("[抓取] 🇧🇷 巴西 — 能源招标 & 储能拍卖")
     return [
-        {"country":"巴西","location":"圣保罗","name":"分布式光伏项目采购","capacity_mw":12,
-         "deadline":(b+timedelta(days=35)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
+        {"country": "巴西", "location": "全巴西",
+         "name": "首次储能专项拍卖 LRCAP — 2GW/8GWh 电池储能（历史性）",
+         "capacity_mw": 2000, "deadline": "2026-04-30", "status": "进行中",
+         "source": "MME Brazil",
+         "url": "https://www.trade.gov/market-intelligence/brazil-energy-battery-storage-auction"},
+        {"country": "巴西", "location": "全巴西",
+         "name": "ANEEL 输电线路拍卖 No.1/2026 — R$33亿（5个标段12个州）",
+         "capacity_mw": 0, "deadline": "2026年内", "status": "进行中",
+         "source": "ANEEL",
+         "url": "https://www.trade.gov/market-intelligence/brazil-energy-grid-infrastructure"},
+        {"country": "巴西", "location": "亚马逊/帕拉州",
+         "name": "ANEEL 孤立系统混合能源拍卖（光伏+储能+柴油）67MW",
+         "capacity_mw": 67, "deadline": "已完成", "status": "已开标",
+         "source": "ANEEL",
+         "url": "https://en.clickpetroleoegas.com.br/leilao-da-aneel-incluira-energia-solar-e-baterias-para-sistemas-isolados/"},
+        {"country": "巴西", "location": "全巴西",
+         "name": "SNEC PV & ES LATAM 圣保罗展（首次中国外举办）",
+         "capacity_mw": 0, "deadline": "2026-03-24", "status": "已举办",
+         "source": "行业动态",
+         "url": "https://en.clickpetroleoegas.com.br/brasil-arma-revolucao-da-energia-solar-primeiro-leilao-de-baterias-em-2026-vai-guardar-energia-do-sol-para-a-noite-mhbb01/"},
+        {"country": "智利", "location": "全智利",
+         "name": "智利可再生能源+储能部署（拉美储能热点）",
+         "capacity_mw": 0, "deadline": "持续", "status": "进行中",
+         "source": "行业动态",
+         "url": "https://www.energy-storage.news"},
     ]
 
 def fetch_africa():
-    print("[抓取] 🌍 南非 — 模拟数据")
-    b = datetime.now()
+    """
+    南非太阳能/储能招标
+    来源: DMRE REIPPPP + BESIPPPP
+    南非是非洲最大的可再生能源采购市场
+    """
+    print("[抓取] 🌍 南非 — REIPPPP & BESIPPPP 招标")
     return [
-        {"country":"南非","location":"开普敦","name":"10MW 私人电力采购协议需求","capacity_mw":10,
-         "deadline":(b+timedelta(days=50)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
+        {"country": "南非", "location": "自由省",
+         "name": "BESIPPPP 第三轮 — 616MW/2,464MWh 电池储能（5个变电站）",
+         "capacity_mw": 616, "deadline": "评标中", "status": "评标中",
+         "source": "DMRE South Africa",
+         "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"},
+        {"country": "南非", "location": "全南非",
+         "name": "REIPPPP 第七轮 — 1,760MW 光伏（8个项目已定标）",
+         "capacity_mw": 1760, "deadline": "已定标", "status": "已定标",
+         "source": "DMRE South Africa",
+         "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"},
+        {"country": "南非", "location": "北开普省",
+         "name": "Scatec 540MW光伏+225MW/1,140MWh储能混合项目",
+         "capacity_mw": 540, "deadline": "建设中", "status": "建设中",
+         "source": "行业动态",
+         "url": "https://www.pv-tech.org/south-africa-opens-seventh-bidding-window-of-reipppp-seeks-1-8gw-solar-pv/"},
+        {"country": "南非", "location": "全南非",
+         "name": "Eskom 电池储能计划 — 343MW/1,449MWh + 60MW光伏（两期）",
+         "capacity_mw": 343, "deadline": "分期推进", "status": "进行中",
+         "source": "Eskom",
+         "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"},
     ]
 
 def fetch_australia():
-    print("[抓取] 🇦🇺 澳大利亚 — 模拟数据")
-    b = datetime.now()
+    """
+    澳大利亚太阳能/储能招标
+    来源: CIS (Capacity Investment Scheme) + NSW Roadmap + 州级采购
+    澳大利亚 CIS 目标: 32GW 可再生能源 + 9GW/36GWh 储能
+    """
+    print("[抓取] 🇦🇺 澳大利亚 — CIS & 州级储能招标")
     return [
-        {"country":"澳大利亚","location":"新南威尔士","name":"100MW 大电池项目招标","capacity_mw":100,
-         "deadline":(b+timedelta(days=100)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
+        {"country": "澳大利亚", "location": "全国NEM",
+         "name": "CIS Tender 8 — 可再生能源+储能（登记中）",
+         "capacity_mw": 0, "deadline": "2026-02-06", "status": "已截止",
+         "source": "DCCEEW Australia",
+         "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"},
+        {"country": "澳大利亚", "location": "全国NEM",
+         "name": "CIS Tender 7 — 5GW 可再生能源发电（评标中，5月公布）",
+         "capacity_mw": 5000, "deadline": "2026-05-31", "status": "评标中",
+         "source": "DCCEEW Australia",
+         "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"},
+        {"country": "澳大利亚", "location": "西澳WEM",
+         "name": "CIS Tender 5 — 1,600MW 可再生能源（西澳，评标中）",
+         "capacity_mw": 1600, "deadline": "2026-03-31", "status": "评标中",
+         "source": "DCCEEW Australia",
+         "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"},
+        {"country": "澳大利亚", "location": "西澳WEM",
+         "name": "CIS Tender 6 — 2,400MWh 调度容量（西澳，评标中）",
+         "capacity_mw": 0, "deadline": "2026-03-31", "status": "评标中",
+         "source": "DCCEEW Australia",
+         "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"},
+        {"country": "澳大利亚", "location": "新南威尔士",
+         "name": "NSW 长时储能 Tender 6 — 6个BESS项目12GWh（已定标）",
+         "capacity_mw": 0, "deadline": "已定标", "status": "已定标",
+         "source": "NSW Energy",
+         "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"},
+        {"country": "澳大利亚", "location": "南澳",
+         "name": "南澳 700MW 长时储能拍卖（8小时+，首轮）",
+         "capacity_mw": 700, "deadline": "2026-05-31", "status": "评标中",
+         "source": "SA Government",
+         "url": "https://reneweconomy.com.au/south-australia-unveils-first-auction-as-worlds-most-advanced-renewables-grid-seeks-long-duration-storage/"},
     ]
 
 
@@ -590,9 +671,9 @@ def classify_continent(country):
                  "哈里亚纳邦","贾坎德邦","旁遮普邦","奥里萨邦","拉贾斯坦邦"],
         "north_america": ["美国","加拿大","墨西哥","联邦","加州","德州","佛州","纽约","亚利桑那",
                           "安大略省","阿尔伯塔省"],
-        "south_america": ["巴西","智利","阿根廷"],
-        "africa": ["南非","肯尼亚","尼日利亚","埃及"],
-        "oceania": ["澳大利亚","新西兰"],
+        "south_america": ["巴西","智利","阿根廷","全巴西","亚马逊","帕拉州","全智利"],
+        "africa": ["南非","肯尼亚","尼日利亚","埃及","全南非","自由省","北开普省"],
+        "oceania": ["澳大利亚","新西兰","全国NEM","西澳WEM","新南威尔士","南澳","维多利亚","昆士兰"],
     }
     for k, v in m.items():
         if any(c in country for c in v):
