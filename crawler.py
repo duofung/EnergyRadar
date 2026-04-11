@@ -143,6 +143,8 @@ def fetch_ted_germany() -> list:
 
                         if title:
                             name_cn = translate_to_chinese(str(title))
+                            # TED 公告链接格式: https://ted.europa.eu/en/notice/{编号}
+                            tender_url = f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else ""
                             tenders.append({
                                 "country": "德国",
                                 "location": "德国",
@@ -152,6 +154,7 @@ def fetch_ted_germany() -> list:
                                 "status": "进行中",
                                 "source": "TED Europa",
                                 "ref": pub_number,
+                                "url": tender_url,
                             })
 
                 print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
@@ -189,17 +192,17 @@ def fetch_bundesnetzagentur() -> list:
 
     schedule = [
         {"name": "BNetzA 地面光伏招标 第一轮", "deadline": "2026-03-01", "capacity_mw": 3300,
-         "detail": "~3,300 MW | Segment 1 Freifläche"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
         {"name": "BNetzA 地面光伏招标 第二轮", "deadline": "2026-07-01", "capacity_mw": 3300,
-         "detail": "~3,300 MW | Segment 1"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
         {"name": "BNetzA 地面光伏招标 第三轮", "deadline": "2026-12-01", "capacity_mw": 3300,
-         "detail": "~3,300 MW | Segment 1"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
         {"name": "BNetzA 屋顶光伏招标 第一轮", "deadline": "2026-02-01", "capacity_mw": 367,
-         "detail": "~367 MW | Segment 2 Gebäude"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
         {"name": "BNetzA 屋顶光伏招标 第二轮", "deadline": "2026-06-01", "capacity_mw": 367,
-         "detail": "~367 MW | Segment 2"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
         {"name": "BNetzA 屋顶光伏招标 第三轮", "deadline": "2026-10-01", "capacity_mw": 367,
-         "detail": "~367 MW | Segment 2"},
+         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
     ]
 
     for item in schedule:
@@ -212,6 +215,7 @@ def fetch_bundesnetzagentur() -> list:
                 "deadline": item["deadline"],
                 "status": "进行中" if d >= today else "已截止",
                 "source": "Bundesnetzagentur",
+                "url": item["url"],
             })
 
     print(f"  ✅ {len(tenders)} 条活跃招标")
