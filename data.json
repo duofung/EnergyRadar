@@ -49,7 +49,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DAUT"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "奥地利",
@@ -59,7 +59,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D45261215+AND+country%3DAUT"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=45261215&search-scope=ACTIVE"
     },
     {
       "country": "瑞士",
@@ -69,7 +69,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DCHE"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "瑞士",
@@ -79,7 +79,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09331200+AND+country%3DCHE"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "意大利",
@@ -89,7 +89,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DITA"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ITA&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "意大利",
@@ -99,7 +99,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DITA"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ITA&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "西班牙",
@@ -109,7 +109,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DESP"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "西班牙",
@@ -119,7 +119,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DESP"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "波兰",
@@ -129,7 +129,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DPOL"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=POL&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "波兰",
@@ -139,7 +139,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D45261215+AND+country%3DPOL"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=POL&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "捷克",
@@ -149,7 +149,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DCZE"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CZE&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "捷克",
@@ -159,7 +159,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D45261215+AND+country%3DCZE"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CZE&cpv=45261215&search-scope=ACTIVE"
     },
     {
       "country": "罗马尼亚",
@@ -169,7 +169,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DROU"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "罗马尼亚",
@@ -179,7 +179,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DROU"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "法国",
@@ -189,7 +189,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DFRA"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "法国",
@@ -199,7 +199,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D45261215+AND+country%3DFRA"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "荷兰",
@@ -209,7 +209,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DNLD"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "荷兰",
@@ -219,7 +219,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D31440000+AND+country%3DNLD"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "希腊",
@@ -229,7 +229,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DGRC"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=GRC&cpv=45261215&search-scope=ACTIVE"
     },
     {
       "country": "保加利亚",
@@ -239,7 +239,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DBGR"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=BGR&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "葡萄牙",
@@ -249,7 +249,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DPRT"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=PRT&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "匈牙利",
@@ -259,7 +259,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/notice/-/search?q=cpv%3D09330000+AND+country%3DHUN"
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=HUN&cpv=09330000&search-scope=ACTIVE"
     }
   ],
   "asia": [
