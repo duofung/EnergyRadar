@@ -1,479 +1,129 @@
-#!/usr/bin/env python3
-"""
-crawler.py — 全球能源招标数据抓取脚本（德国已接入真实数据）
-用法: python crawler.py
-输出: 更新当前目录下的 data.json
-
-数据源:
-├── 德国/欧洲 ✅ 真实数据
-│   ├── TED Search API（欧盟官方，免费，无需API Key）
-│   └── Bundesnetzagentur 招标日程（官网结构化数据）
-└── 其他地区 🔜 模拟数据（待逐个替换）
-"""
-
-import json
-import os
-from datetime import datetime, timedelta
-
-# ═══════════════════════════════════════════
-# 配置
-# ═══════════════════════════════════════════
-
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-OUTPUT_FILE = "data.json"
-
-# TED Search API — 免费，匿名访问，无需注册
-TED_API_URL = "https://api.ted.europa.eu/v3/notices/search"
-
-
-# ═══════════════════════════════════════════
-# AI 翻译
-# ═══════════════════════════════════════════
-
-def translate_to_chinese(text: str) -> str:
-    """将外语翻译为简洁中文"""
-    if not text:
-        return text
-    chinese_chars = sum(1 for c in text if '\u4e00' <= c <= '\u9fff')
-    if chinese_chars > len(text) * 0.3:
-        return text
-
-    if OPENAI_API_KEY:
-        try:
-            import requests
-            resp = requests.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers={"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"},
-                json={
-                    "model": "gpt-4o-mini",
-                    "messages": [
-                        {"role": "system", "content": "你是能源行业翻译。将招标信息翻译成简洁中文，保留MW、地点等数据。只输出翻译。"},
-                        {"role": "user", "content": text},
-                    ],
-                    "max_tokens": 200, "temperature": 0.1,
-                },
-                timeout=15,
-            )
-            if resp.status_code == 200:
-                return resp.json()["choices"][0]["message"]["content"].strip()
-        except Exception as e:
-            print(f"  [翻译] OpenAI 失败: {e}")
-
-    if GEMINI_API_KEY:
-        try:
-            import requests
-            resp = requests.post(
-                f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={GEMINI_API_KEY}",
-                json={"contents": [{"parts": [{"text": f"翻译为简洁中文，保留数据：\n{text}"}]}]},
-                timeout=15,
-            )
-            if resp.status_code == 200:
-                return resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        except Exception as e:
-            print(f"  [翻译] Gemini 失败: {e}")
-
-    return text
-
-
-# ═══════════════════════════════════════════
-# 数据源 1: TED Search API（德国 + 欧洲）
-# ═══════════════════════════════════════════
-# 官方文档: https://docs.ted.europa.eu/api/latest/search.html
-# ✅ 免费 | ✅ 无需API Key | ✅ 匿名访问
-#
-# CPV 代码（欧盟通用采购分类）:
-#   09330000 - 太阳能 (Solar energy)
-#   09331200 - 光伏模块 (Solar photovoltaic modules)
-#   09332000 - 太阳能安装 (Solar installation)
-#   31440000 - 蓄电池 (Batteries)
-#   45261215 - 太阳能屋顶工程
-
-def fetch_ted_germany() -> list:
-    """从 TED API 抓取德国能源招标（真实数据）"""
-    import requests
-
-    print("[抓取] 🇩🇪 TED Europa — 德国能源招标")
-    tenders = []
-
-    # TED Expert Query 语法
-    queries = [
-        'country = "DEU" AND cpv = "09330000"',   # 太阳能
-        'country = "DEU" AND cpv = "31440000"',   # 储能/电池
-        'country = "DEU" AND cpv = "45261215"',   # 光伏屋顶工程
-    ]
-
-    for query in queries:
-        try:
-            resp = requests.post(
-                TED_API_URL,
-                headers={"Content-Type": "application/json", "Accept": "application/json"},
-                json={
-                    "query": query,
-                    "fields": ["publication-number", "notice-title", "submission-deadline",
-                               "buyer-name", "cpv-code", "place-of-performance"],
-                    "pageSize": 20,
-                    "pageNum": 1,
-                    "scope": "ACTIVE",
-                },
-                timeout=30,
-            )
-
-            if resp.status_code == 200:
-                data = resp.json()
-                notices = data.get("notices", data.get("results", []))
-
-                if isinstance(notices, list):
-                    for notice in notices[:10]:
-                        if not isinstance(notice, dict):
-                            continue
-
-                        title = (notice.get("notice-title") or notice.get("title") or
-                                 notice.get("TI") or "")
-                        if isinstance(title, list):
-                            title = title[0] if title else ""
-                        if isinstance(title, dict):
-                            title = title.get("de", title.get("en", str(title)))
-
-                        deadline = str(notice.get("submission-deadline") or
-                                       notice.get("deadline") or notice.get("DT") or "")[:10]
-
-                        pub_number = str(notice.get("publication-number") or
-                                         notice.get("ND") or "")
-
-                        if title:
-                            name_cn = translate_to_chinese(str(title))
-                            # TED 公告链接格式: https://ted.europa.eu/en/notice/{编号}
-                            tender_url = f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else ""
-                            tenders.append({
-                                "country": "德国",
-                                "location": "德国",
-                                "name": name_cn,
-                                "capacity_mw": 0,
-                                "deadline": deadline or "见公告",
-                                "status": "进行中",
-                                "source": "TED Europa",
-                                "ref": pub_number,
-                                "url": tender_url,
-                            })
-
-                print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
-            else:
-                print(f"  ⚠️ HTTP {resp.status_code}")
-
-        except Exception as e:
-            print(f"  ❌ 查询失败: {e}")
-
-    # 去重
-    seen = set()
-    unique = []
-    for t in tenders:
-        if t["name"] not in seen:
-            seen.add(t["name"])
-            unique.append(t)
-
-    print(f"  📊 去重后共 {len(unique)} 条")
-    return unique
-
-
-def fetch_bundesnetzagentur() -> list:
-    """
-    德国联邦网络管理局 (BNetzA) 太阳能招标轮次
-    来源: bundesnetzagentur.de
-    没有公开API，数据为官网公告结构化整理
-    2026年日程:
-    - 地面光伏 Segment 1: 3/1, 7/1, 12/1（年总量 9,900 MW）
-    - 屋顶光伏 Segment 2: 2/1, 6/1, 10/1（年总量 1,100 MW）
-    """
-    print("[抓取] 🇩🇪 Bundesnetzagentur 太阳能招标日程")
-
-    today = datetime.now()
-    tenders = []
-
-    schedule = [
-        {"name": "BNetzA 地面光伏招标 第一轮", "deadline": "2026-03-01", "capacity_mw": 3300,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
-        {"name": "BNetzA 地面光伏招标 第二轮", "deadline": "2026-07-01", "capacity_mw": 3300,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
-        {"name": "BNetzA 地面光伏招标 第三轮", "deadline": "2026-12-01", "capacity_mw": 3300,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"},
-        {"name": "BNetzA 屋顶光伏招标 第一轮", "deadline": "2026-02-01", "capacity_mw": 367,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
-        {"name": "BNetzA 屋顶光伏招标 第二轮", "deadline": "2026-06-01", "capacity_mw": 367,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
-        {"name": "BNetzA 屋顶光伏招标 第三轮", "deadline": "2026-10-01", "capacity_mw": 367,
-         "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"},
-    ]
-
-    for item in schedule:
-        d = datetime.strptime(item["deadline"], "%Y-%m-%d")
-        if d >= today - timedelta(days=30):
-            tenders.append({
-                "country": "德国", "location": "全德国",
-                "name": item["name"],
-                "capacity_mw": item["capacity_mw"],
-                "deadline": item["deadline"],
-                "status": "进行中" if d >= today else "已截止",
-                "source": "Bundesnetzagentur",
-                "url": item["url"],
-            })
-
-    print(f"  ✅ {len(tenders)} 条活跃招标")
-    return tenders
-
-
-# ═══════════════════════════════════════════
-# 其他地区（模拟数据，待逐个替换）
-# ═══════════════════════════════════════════
-
-def fetch_ted_asia() -> list:
-    """
-    从 TED API 搜索亚洲相关的太阳能/储能项目
-    TED 中有欧盟机构资助的亚洲能源项目，以及履行地在亚洲的采购
-    """
-    import requests
-
-    print("[抓取] 🌏 TED Europa — 亚洲能源项目")
-    tenders = []
-
-    # 搜索履行地在越南、印度、泰国等的太阳能项目
-    queries = [
-        'place-of-performance = "VNM" AND cpv = "09330000"',  # 越南太阳能
-        'place-of-performance = "IND" AND cpv = "09330000"',  # 印度太阳能
-        'place-of-performance = "THA" AND cpv = "09330000"',  # 泰国太阳能
-        'place-of-performance = "IDN" AND cpv = "09330000"',  # 印尼太阳能
-        'place-of-performance = "MYS" AND cpv = "09330000"',  # 马来西亚太阳能
-    ]
-
-    country_map = {"VNM": "越南", "IND": "印度", "THA": "泰国", "IDN": "印度尼西亚", "MYS": "马来西亚"}
-
-    for query in queries:
-        try:
-            resp = requests.post(
-                TED_API_URL,
-                headers={"Content-Type": "application/json", "Accept": "application/json"},
-                json={"query": query, "fields": ["publication-number", "notice-title",
-                      "submission-deadline", "buyer-name", "place-of-performance"],
-                      "pageSize": 10, "pageNum": 1, "scope": "ACTIVE"},
-                timeout=30,
-            )
-            if resp.status_code == 200:
-                data = resp.json()
-                notices = data.get("notices", data.get("results", []))
-                if isinstance(notices, list):
-                    for notice in notices[:5]:
-                        if not isinstance(notice, dict):
-                            continue
-                        title = notice.get("notice-title") or notice.get("title") or notice.get("TI") or ""
-                        if isinstance(title, list): title = title[0] if title else ""
-                        if isinstance(title, dict): title = title.get("en", str(title))
-                        deadline = str(notice.get("submission-deadline") or notice.get("DT") or "")[:10]
-                        pub_number = str(notice.get("publication-number") or notice.get("ND") or "")
-
-                        # 从查询中提取国家代码
-                        country_code = query.split('"')[1]
-                        country_cn = country_map.get(country_code, country_code)
-
-                        if title:
-                            name_cn = translate_to_chinese(str(title))
-                            tenders.append({
-                                "country": country_cn, "location": country_cn,
-                                "name": name_cn, "capacity_mw": 0,
-                                "deadline": deadline or "见公告", "status": "进行中",
-                                "source": "TED Europa",
-                                "url": f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else "",
-                            })
-                print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
-            else:
-                print(f"  ⚠️ HTTP {resp.status_code}")
-        except Exception as e:
-            print(f"  ❌ TED 亚洲查询失败: {e}")
-
-    # 去重
-    seen = set()
-    unique = [t for t in tenders if t["name"] not in seen and not seen.add(t["name"])]
-    print(f"  📊 TED 亚洲共 {len(unique)} 条")
-    return unique
-
-
-def fetch_india_seci() -> list:
-    """
-    印度 SECI（Solar Energy Corporation of India）招标信息
-    来源: seci.co.in + mercomindia.com
-    没有公开API，数据来自官方公告结构化整理
-    SECI 是全球最大的太阳能/储能招标机构之一
-    """
-    print("[抓取] 🇮🇳 印度 SECI — 太阳能+储能招标")
-
-    today = datetime.now()
-    tenders = []
-
-    # 来自 SECI 官网和 Mercom India 的真实招标信息（2026年）
-    seci_tenders = [
-        {"name": "SECI 80MW 短期固定电力开放准入采购",
-         "location": "全印度", "capacity_mw": 80, "deadline": "2026-04-20",
-         "url": "https://www.seci.co.in/tenders"},
-        {"name": "NHPC 30.93MW 哈里亚纳邦政府屋顶光伏项目",
-         "location": "哈里亚纳邦", "capacity_mw": 31, "deadline": "2026-04-25",
-         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
-        {"name": "CMPDI 25MW 丹巴德太阳能电站项目",
-         "location": "贾坎德邦", "capacity_mw": 25, "deadline": "2026-04-30",
-         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
-        {"name": "北方铁路 2.15MW 旁遮普邦车站光伏项目",
-         "location": "旁遮普邦", "capacity_mw": 2, "deadline": "2026-05-10",
-         "url": "https://www.mercomindia.com/category/solar/tenders-auctions"},
-        {"name": "SECI FDRE Tranche VII — 1200MW 可再生能源+4800MWh储能",
-         "location": "全印度", "capacity_mw": 1200, "deadline": "2026-02-15",
-         "detail": "已开标 | 中标方: Adyant/Serentica/AMPIN/ACME | ₹6.27-6.28/kWh",
-         "url": "https://www.seci.co.in/tenders"},
-        {"name": "SECI 125MW/500MWh 奥里萨邦独立储能系统（VGF）",
-         "location": "奥里萨邦", "capacity_mw": 125, "deadline": "2026-03-01",
-         "detail": "已开标 | Coal India + Onward Solar中标",
-         "url": "https://www.seci.co.in/tenders"},
-    ]
-
-    for item in seci_tenders:
-        d = datetime.strptime(item["deadline"], "%Y-%m-%d")
-        if d >= today - timedelta(days=45):  # 显示近45天内的
-            status = "进行中" if d >= today else "已开标"
-            tenders.append({
-                "country": "印度", "location": item["location"],
-                "name": item["name"], "capacity_mw": item["capacity_mw"],
-                "deadline": item["deadline"], "status": status,
-                "source": "SECI India", "url": item["url"],
-            })
-
-    print(f"  ✅ SECI 印度: {len(tenders)} 条")
-    return tenders
-
-
-def fetch_vietnam_policy() -> list:
-    """
-    越南能源政策 & 项目动态
-    越南没有公开招标API，但有重要政策和项目信息
-    来源: EVN公告、MOIT政策、行业媒体
-    """
-    print("[抓取] 🇻🇳 越南 — 能源政策 & DPPA 动态")
-
-    tenders = [
-        {"country": "越南", "location": "全越南",
-         "name": "Decree 57/58 — DPPA直购电机制（可再生能源→大用户）",
-         "capacity_mw": 0, "deadline": "长期有效", "status": "政策生效",
-         "source": "MOIT 越南",
-         "url": "https://www.vietnam-briefing.com/news/vietnam-renewable-energy-decree-57.html/"},
-        {"country": "越南", "location": "全越南",
-         "name": "屋顶光伏余电上网草案 — 上限拟提至50%（征求意见中）",
-         "capacity_mw": 0, "deadline": "2026年内", "status": "征求意见",
-         "source": "MOIT 越南",
-         "url": "https://b-company.jp/vietnam-rooftop-solar-draft-rules-2026-selling-up-to-50-surplus-power-who-benefits-and-what-to-watch-next"},
-        {"country": "越南", "location": "全越南",
-         "name": "EVN 2026年度 PVout 系数公告（屋顶光伏发电量计算基准）",
-         "capacity_mw": 0, "deadline": "2026-01-20", "status": "已发布",
-         "source": "EVN 越南",
-         "url": "https://vas-co.com/en/pv-out-2026-en/"},
-    ]
-
-    print(f"  ✅ 越南政策动态: {len(tenders)} 条")
-    return tenders
-
-def fetch_usa():
-    print("[抓取] 🇺🇸 美国 — 模拟数据")
-    b = datetime.now()
-    return [
-        {"country":"美国","location":"加州","name":"50MW 公用事业级太阳能+储能项目","capacity_mw":50,
-         "deadline":(b+timedelta(days=90)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-        {"country":"美国","location":"德州","name":"独立储能项目咨询","capacity_mw":30,
-         "deadline":(b+timedelta(days=70)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-    ]
-
-def fetch_brazil():
-    print("[抓取] 🇧🇷 巴西 — 模拟数据")
-    b = datetime.now()
-    return [
-        {"country":"巴西","location":"圣保罗","name":"分布式光伏项目采购","capacity_mw":12,
-         "deadline":(b+timedelta(days=35)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-    ]
-
-def fetch_africa():
-    print("[抓取] 🌍 南非 — 模拟数据")
-    b = datetime.now()
-    return [
-        {"country":"南非","location":"开普敦","name":"10MW 私人电力采购协议需求","capacity_mw":10,
-         "deadline":(b+timedelta(days=50)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-    ]
-
-def fetch_australia():
-    print("[抓取] 🇦🇺 澳大利亚 — 模拟数据")
-    b = datetime.now()
-    return [
-        {"country":"澳大利亚","location":"新南威尔士","name":"100MW 大电池项目招标","capacity_mw":100,
-         "deadline":(b+timedelta(days=100)).strftime("%Y-%m-%d"),"status":"进行中","source":"模拟"},
-    ]
-
-
-# ═══════════════════════════════════════════
-# 分类 + 主流程
-# ═══════════════════════════════════════════
-
-def classify_continent(country):
-    m = {
-        "europe": ["德国","法国","英国","西班牙","意大利","荷兰","全德国"],
-        "asia": ["越南","印度","泰国","日本","韩国","中国","马来西亚","印度尼西亚","全越南","全印度",
-                 "哈里亚纳邦","贾坎德邦","旁遮普邦","奥里萨邦","拉贾斯坦邦"],
-        "north_america": ["美国","加拿大","墨西哥"],
-        "south_america": ["巴西","智利","阿根廷"],
-        "africa": ["南非","肯尼亚","尼日利亚","埃及"],
-        "oceania": ["澳大利亚","新西兰"],
+{
+  "updated_at": "2026-04-11 17:30",
+  "europe": [
+    {
+      "country": "德国", "location": "全德国",
+      "name": "BNetzA 屋顶光伏招标 第二轮（Segment 2 ~367MW）",
+      "status": "进行中", "deadline": "2026-06-01", "capacity_mw": 367,
+      "source": "Bundesnetzagentur",
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"
+    },
+    {
+      "country": "德国", "location": "全德国",
+      "name": "BNetzA 地面光伏招标 第二轮（Segment 1 ~3,300MW）",
+      "status": "进行中", "deadline": "2026-07-01", "capacity_mw": 3300,
+      "source": "Bundesnetzagentur",
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"
+    },
+    {
+      "country": "德国", "location": "全德国",
+      "name": "BNetzA 屋顶光伏招标 第三轮（Segment 2 ~367MW）",
+      "status": "进行中", "deadline": "2026-10-01", "capacity_mw": 367,
+      "source": "Bundesnetzagentur",
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"
+    },
+    {
+      "country": "德国", "location": "全德国",
+      "name": "BNetzA 地面光伏招标 第三轮（Segment 1 ~3,300MW）",
+      "status": "进行中", "deadline": "2026-12-01", "capacity_mw": 3300,
+      "source": "Bundesnetzagentur",
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"
     }
-    for k, v in m.items():
-        if any(c in country for c in v):
-            return k
-    return "asia"
-
-def run():
-    print("=" * 60)
-    print(f"🔄 招标数据更新 — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("=" * 60)
-
-    all_tenders = []
-
-    sources = [
-        # 欧洲 — 真实API
-        ("TED 德国", fetch_ted_germany),
-        ("BNetzA", fetch_bundesnetzagentur),
-        # 亚洲 — TED API + 官方数据
-        ("TED 亚洲", fetch_ted_asia),
-        ("印度 SECI", fetch_india_seci),
-        ("越南政策", fetch_vietnam_policy),
-        # 其他地区 — 模拟数据
-        ("美国", fetch_usa),
-        ("巴西", fetch_brazil),
-        ("南非", fetch_africa),
-        ("澳大利亚", fetch_australia),
-    ]
-
-    for name, fn in sources:
-        try:
-            items = fn()
-            all_tenders.extend(items)
-        except Exception as e:
-            print(f"  ❌ {name}: {e}")
-
-    grouped = {"europe":[],"asia":[],"north_america":[],"south_america":[],"africa":[],"oceania":[]}
-    for t in all_tenders:
-        grouped[classify_continent(t.get("country",""))].append(t)
-
-    for k in grouped:
-        grouped[k].sort(key=lambda x: x.get("deadline","9999"))
-
-    grouped["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(grouped, f, ensure_ascii=False, indent=2)
-
-    print(f"\n✅ 写入 {OUTPUT_FILE} — 共 {len(all_tenders)} 条")
-    for k in ["europe","asia","north_america","south_america","africa","oceania"]:
-        print(f"   {k}: {len(grouped[k])} 条")
-
-if __name__ == "__main__":
-    run()
+  ],
+  "asia": [
+    {
+      "country": "印度", "location": "全印度",
+      "name": "SECI 80MW 短期固定电力开放准入采购",
+      "status": "进行中", "deadline": "2026-04-20", "capacity_mw": 80,
+      "source": "SECI India",
+      "url": "https://www.seci.co.in/tenders"
+    },
+    {
+      "country": "印度", "location": "哈里亚纳邦",
+      "name": "NHPC 30.93MW 政府屋顶光伏项目",
+      "status": "进行中", "deadline": "2026-04-25", "capacity_mw": 31,
+      "source": "SECI India",
+      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
+    },
+    {
+      "country": "印度", "location": "贾坎德邦",
+      "name": "CMPDI 25MW 丹巴德太阳能电站项目",
+      "status": "进行中", "deadline": "2026-04-30", "capacity_mw": 25,
+      "source": "SECI India",
+      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
+    },
+    {
+      "country": "印度", "location": "全印度",
+      "name": "SECI FDRE VII — 1200MW光伏+4800MWh储能（已开标）",
+      "status": "已开标", "deadline": "2026-02-15", "capacity_mw": 1200,
+      "source": "SECI India",
+      "url": "https://www.seci.co.in/tenders"
+    },
+    {
+      "country": "印度", "location": "奥里萨邦",
+      "name": "SECI 125MW/500MWh 独立储能系统 VGF（已开标）",
+      "status": "已开标", "deadline": "2026-03-01", "capacity_mw": 125,
+      "source": "SECI India",
+      "url": "https://www.seci.co.in/tenders"
+    },
+    {
+      "country": "越南", "location": "全越南",
+      "name": "Decree 57/58 — DPPA直购电机制（可再生能源→大用户）",
+      "status": "政策生效", "deadline": "长期有效", "capacity_mw": 0,
+      "source": "MOIT 越南",
+      "url": "https://www.vietnam-briefing.com/news/vietnam-renewable-energy-decree-57.html/"
+    },
+    {
+      "country": "越南", "location": "全越南",
+      "name": "屋顶光伏余电上网草案 — 上限拟提至50%（征求意见中）",
+      "status": "征求意见", "deadline": "2026年内", "capacity_mw": 0,
+      "source": "MOIT 越南",
+      "url": "https://b-company.jp/vietnam-rooftop-solar-draft-rules-2026-selling-up-to-50-surplus-power-who-benefits-and-what-to-watch-next"
+    },
+    {
+      "country": "越南", "location": "全越南",
+      "name": "EVN 2026年度 PVout 系数公告（屋顶光伏计算基准）",
+      "status": "已发布", "deadline": "2026-01-20", "capacity_mw": 0,
+      "source": "EVN 越南",
+      "url": "https://vas-co.com/en/pv-out-2026-en/"
+    }
+  ],
+  "north_america": [
+    {
+      "country": "美国", "location": "加州",
+      "name": "50MW 公用事业级太阳能+储能项目",
+      "status": "进行中", "deadline": "2026-07-10", "capacity_mw": 50,
+      "source": "模拟数据", "url": ""
+    },
+    {
+      "country": "美国", "location": "德州",
+      "name": "独立储能项目咨询",
+      "status": "进行中", "deadline": "2026-06-20", "capacity_mw": 30,
+      "source": "模拟数据", "url": ""
+    }
+  ],
+  "south_america": [
+    {
+      "country": "巴西", "location": "圣保罗",
+      "name": "分布式光伏项目采购",
+      "status": "进行中", "deadline": "2026-05-16", "capacity_mw": 12,
+      "source": "模拟数据", "url": ""
+    }
+  ],
+  "africa": [
+    {
+      "country": "南非", "location": "开普敦",
+      "name": "10MW 私人电力采购协议需求",
+      "status": "进行中", "deadline": "2026-05-31", "capacity_mw": 10,
+      "source": "模拟数据", "url": ""
+    }
+  ],
+  "oceania": [
+    {
+      "country": "澳大利亚", "location": "新南威尔士",
+      "name": "100MW 大电池项目招标",
+      "status": "进行中", "deadline": "2026-07-20", "capacity_mw": 100,
+      "source": "模拟数据", "url": ""
+    }
+  ]
+}
