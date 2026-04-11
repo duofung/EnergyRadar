@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球能源招标动态看板 — XpandExpo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0a0a0a;
+  --surface:#111113;
+  --card:#161618;
+  --card-hover:#1c1c1f;
+  --border:#252528;
+  --border-accent:#2a2a2e;
+  --text-primary:#f0f0f2;
+  --text-secondary:#8e8e93;
+  --text-tertiary:#636366;
+  --accent:#00d48a;
+  --accent-dim:rgba(0,212,138,.12);
+  --accent-glow:rgba(0,212,138,.06);
+  --status-active:#00d48a;
+  --status-upcoming:#f5a623;
+  --tag-bg:rgba(255,255,255,.05);
+  --radius:14px;
+  --radius-sm:8px;
+  --font-display:'DM Sans','Noto Sans SC',system-ui,sans-serif;
+  --font-body:'Noto Sans SC','DM Sans',system-ui,sans-serif;
+}
+
+html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
+
+/* ── Ambient background ── */
+body::before{
+  content:'';position:fixed;top:-40%;left:-20%;width:140%;height:140%;
+  background:radial-gradient(ellipse 600px 400px at 20% 30%,rgba(0,212,138,.04),transparent 70%),
+             radial-gradient(ellipse 500px 500px at 80% 60%,rgba(0,150,255,.03),transparent 70%);
+  pointer-events:none;z-index:0;
+}
+
+/* ── Header ── */
+.header{
+  position:relative;z-index:1;
+  padding:48px 40px 0;
+  max-width:1400px;margin:0 auto;
+}
+.header-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);
+  background:var(--accent-dim);
+  padding:6px 14px;border-radius:100px;
+  margin-bottom:20px;
+}
+.header-badge::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+
+.header h1{
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,42px);font-weight:700;
+  letter-spacing:-.02em;line-height:1.15;
+  color:var(--text-primary);
+}
+.header p.subtitle{
+  font-size:15px;color:var(--text-secondary);
+  margin-top:8px;font-weight:400;
+}
+.header .meta{
+  font-size:12px;color:var(--text-tertiary);margin-top:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.header .meta svg{width:14px;height:14px;stroke:var(--text-tertiary)}
+
+/* ── Grid ── */
+.grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1400px;margin:40px auto 120px;
+  padding:0 40px;
+}
+
+/* ── Region Card ── */
+.region-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+  transition:border-color .3s,background .3s;
+  position:relative;
+  overflow:hidden;
+}
+.region-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+}
+.region-card:hover{border-color:var(--border-accent);background:var(--card-hover)}
+
+.region-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.region-title{
+  font-family:var(--font-display);
+  font-size:15px;font-weight:700;color:var(--text-primary);
+  letter-spacing:-.01em;
+}
+.region-subtitle{
+  font-size:11px;color:var(--text-tertiary);font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;margin-top:2px;
+}
+.region-flag{font-size:22px;line-height:1}
+
+/* ── Tender Item ── */
+.tender-item{
+  padding:14px 0;
+  border-top:1px solid var(--border);
+  animation:fadeSlideIn .5s ease both;
+}
+.tender-item:first-child{border-top:none;padding-top:0}
+
+@keyframes fadeSlideIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.tender-name{
+  font-size:14px;font-weight:500;color:var(--text-primary);
+  line-height:1.45;margin-bottom:8px;
+}
+
+.tender-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+.tender-status{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:500;
+  padding:3px 10px;border-radius:100px;
+}
+.tender-status.active{color:var(--status-active);background:rgba(0,212,138,.1)}
+.tender-status.active::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--status-active);
+}
+.tender-status.upcoming{color:var(--status-upcoming);background:rgba(245,166,35,.1)}
+.tender-status.upcoming::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--status-upcoming);
+}
+
+.tender-deadline{
+  font-size:11px;color:var(--text-tertiary);
+  display:flex;align-items:center;gap:4px;
+}
+
+/* ── Expand Button ── */
+.expand-btn{
+  display:none;
+  width:100%;
+  margin-top:14px;padding:10px;
+  background:var(--tag-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  color:var(--accent);
+  font-size:12px;font-weight:500;
+  cursor:pointer;
+  transition:background .2s,border-color .2s;
+  font-family:var(--font-body);
+  letter-spacing:.02em;
+}
+.expand-btn:hover{background:var(--accent-dim);border-color:rgba(0,212,138,.2)}
+.expand-btn.visible{display:block}
+
+.tender-item.hidden{display:none}
+
+/* ── CTA Float Button ── */
+.cta-float{
+  position:fixed;bottom:32px;right:32px;z-index:100;
+  display:flex;align-items:center;gap:8px;
+  background:var(--accent);color:#000;
+  font-family:var(--font-body);font-size:14px;font-weight:700;
+  padding:14px 24px;
+  border:none;border-radius:100px;
+  cursor:pointer;
+  box-shadow:0 4px 24px rgba(0,212,138,.3),0 0 60px rgba(0,212,138,.08);
+  transition:transform .2s,box-shadow .2s;
+}
+.cta-float:hover{transform:translateY(-2px);box-shadow:0 6px 32px rgba(0,212,138,.4)}
+.cta-float svg{width:18px;height:18px}
+
+/* ── Empty State ── */
+.empty-state{
+  text-align:center;padding:32px 0;color:var(--text-tertiary);font-size:13px;
+}
+
+/* ── Loading skeleton ── */
+.skeleton{
+  background:linear-gradient(90deg,var(--border) 25%,var(--border-accent) 50%,var(--border) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.8s infinite;
+  border-radius:6px;height:14px;margin-bottom:10px;
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:16px;padding:0 24px}
+  .header{padding:36px 24px 0}
+}
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr;gap:14px;padding:0 16px}
+  .header{padding:28px 16px 0}
+  .header h1{font-size:24px}
+  .region-card{padding:20px}
+  .cta-float{bottom:20px;right:16px;padding:12px 20px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-badge">实时追踪</div>
+  <h1>全球能源招标动态看板</h1>
+  <p class="subtitle">为您连接全球能源商机</p>
+  <div class="meta" id="updateTime">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span>数据加载中…</span>
+  </div>
+</header>
+
+<main class="grid" id="dashboard"></main>
+
+<!-- CTA -->
+<a class="cta-float" href="https://www.xpandexpo.com" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  展位咨询
+</a>
+
+<script>
+// ── Region config ──
+const REGIONS = [
+  { key:'europe',  zh:'欧洲',   sub:'EUROPE',        flag:'🇪🇺' },
+  { key:'asia',    zh:'亚洲',   sub:'ASIA',           flag:'🌏' },
+  { key:'north_america', zh:'北美洲', sub:'NORTH AMERICA', flag:'🇺🇸' },
+  { key:'south_america', zh:'南美洲', sub:'SOUTH AMERICA', flag:'🇧🇷' },
+  { key:'africa',  zh:'非洲',   sub:'AFRICA',         flag:'🌍' },
+  { key:'oceania', zh:'大洋洲', sub:'OCEANIA',         flag:'🇦🇺' },
+];
+
+const COUNTRY_FLAGS = {
+  '德国':'🇩🇪','越南':'🇻🇳','美国':'🇺🇸','巴西':'🇧🇷','南非':'🇿🇦','澳大利亚':'🇦🇺',
+  '法国':'🇫🇷','英国':'🇬🇧','日本':'🇯🇵','韩国':'🇰🇷','印度':'🇮🇳','泰国':'🇹🇭',
+  '中国':'🇨🇳','加拿大':'🇨🇦','墨西哥':'🇲🇽','智利':'🇨🇱','阿根廷':'🇦🇷',
+  '肯尼亚':'🇰🇪','尼日利亚':'🇳🇬','埃及':'🇪🇬','新西兰':'🇳🇿','印度尼西亚':'🇮🇩',
+  '马来西亚':'🇲🇾','沙特阿拉伯':'🇸🇦','阿联酋':'🇦🇪','西班牙':'🇪🇸','意大利':'🇮🇹',
+  '荷兰':'🇳🇱','波兰':'🇵🇱','圣保罗':'🇧🇷','里约':'🇧🇷','巴拉那':'🇧🇷',
+  '新南威尔士':'🇦🇺','维多利亚':'🇦🇺','昆士兰':'🇦🇺',
+};
+
+const VISIBLE_COUNT = 3;
+
+function getFlag(country) {
+  for (const [k, v] of Object.entries(COUNTRY_FLAGS)) {
+    if (country && country.includes(k)) return v;
+  }
+  return '';
+}
+
+function statusHTML(status) {
+  const isActive = status === '进行中';
+  return `<span class="tender-status ${isActive ? 'active' : 'upcoming'}">${status}</span>`;
+}
+
+function renderCard(region, tenders) {
+  const items = tenders || [];
+  const hasMore = items.length > VISIBLE_COUNT;
+
+  const tendersHTML = items.length === 0
+    ? '<div class="empty-state">暂无招标信息</div>'
+    : items.map((t, i) => {
+        const hidden = i >= VISIBLE_COUNT ? ' hidden' : '';
+        const flag = getFlag(t.country || '');
+        const delay = `animation-delay:${i * .06}s`;
+        return `
+          <div class="tender-item${hidden}" style="${delay}">
+            <div class="tender-name">${flag ? flag + ' ' : ''}【${t.country || t.location || ''}】${t.name}</div>
+            <div class="tender-meta">
+              ${statusHTML(t.status || '进行中')}
+              <span class="tender-deadline">截止日期：${t.deadline || '待定'}</span>
+            </div>
+          </div>`;
+      }).join('');
+
+  const expandBtn = hasMore
+    ? `<button class="expand-btn visible" onclick="toggleExpand(this)" data-expanded="false">+ 查看更多${region.zh}项目</button>`
+    : '';
+
+  return `
+    <div class="region-card">
+      <div class="region-header">
+        <div>
+          <div class="region-title">${region.zh}</div>
+          <div class="region-subtitle">${region.sub}</div>
+        </div>
+        <div class="region-flag">${region.flag}</div>
+      </div>
+      ${tendersHTML}
+      ${expandBtn}
+    </div>`;
+}
+
+function toggleExpand(btn) {
+  const card = btn.closest('.region-card');
+  const hiddenItems = card.querySelectorAll('.tender-item.hidden');
+  const expanded = btn.dataset.expanded === 'true';
+
+  if (expanded) {
+    card.querySelectorAll('.tender-item').forEach((el, i) => {
+      if (i >= VISIBLE_COUNT) el.classList.add('hidden');
+    });
+    btn.textContent = `+ 查看更多项目`;
+    btn.dataset.expanded = 'false';
+  } else {
+    hiddenItems.forEach(el => el.classList.remove('hidden'));
+    btn.textContent = '收起';
+    btn.dataset.expanded = 'true';
+  }
+}
+
+function renderSkeleton() {
+  const dash = document.getElementById('dashboard');
+  dash.innerHTML = REGIONS.map(r => `
+    <div class="region-card">
+      <div class="region-header">
+        <div><div class="region-title">${r.zh}</div><div class="region-subtitle">${r.sub}</div></div>
+        <div class="region-flag">${r.flag}</div>
+      </div>
+      <div class="skeleton" style="width:80%"></div>
+      <div class="skeleton" style="width:60%"></div>
+      <div class="skeleton" style="width:70%"></div>
+    </div>`).join('');
+}
+
+async function loadData() {
+  renderSkeleton();
+  try {
+    const res = await fetch('./data.json?' + Date.now());
+    if (!res.ok) throw new Error('fetch failed');
+    const data = await res.json();
+
+    const dash = document.getElementById('dashboard');
+    dash.innerHTML = REGIONS.map(r => renderCard(r, data[r.key] || [])).join('');
+
+    const time = data.updated_at || new Date().toLocaleString('zh-CN', { timeZone:'Asia/Shanghai' });
+    document.getElementById('updateTime').querySelector('span').textContent =
+      `最后更新时间：${time} CST · 自动刷新`;
+  } catch (e) {
+    console.error('数据加载失败:', e);
+    document.getElementById('updateTime').querySelector('span').textContent =
+      '数据加载失败，请检查 data.json';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
+</body>
+</html>

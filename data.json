@@ -1,0 +1,195 @@
+{
+  "updated_at": "2026-04-11 15:30",
+  "europe": [
+    {
+      "country": "德国",
+      "location": "柏林",
+      "name": "2MW 市政屋顶光伏招标",
+      "status": "进行中",
+      "deadline": "2026-05-20",
+      "capacity_mw": 2,
+      "source": "TED"
+    },
+    {
+      "country": "德国",
+      "location": "汉堡",
+      "name": "港口太阳能+储能项目",
+      "status": "进行中",
+      "deadline": "2026-06-01",
+      "capacity_mw": 5,
+      "source": "TED"
+    },
+    {
+      "country": "德国",
+      "location": "慕尼黑",
+      "name": "城市电网储能扩容招标",
+      "status": "进行中",
+      "deadline": "2026-06-15",
+      "capacity_mw": 10,
+      "source": "TED"
+    },
+    {
+      "country": "德国",
+      "location": "平阳",
+      "name": "工业区屋顶光伏招标",
+      "status": "进行中",
+      "deadline": "2026-06-10",
+      "capacity_mw": 3,
+      "source": "TED"
+    }
+  ],
+  "asia": [
+    {
+      "country": "越南",
+      "location": "海防",
+      "name": "LG 工厂 5MW 工商业光伏需求",
+      "status": "进行中",
+      "deadline": "2026-05-25",
+      "capacity_mw": 5,
+      "source": "Vietnam Procurement"
+    },
+    {
+      "country": "越南",
+      "location": "胡志明市",
+      "name": "政府大楼光伏试点",
+      "status": "进行中",
+      "deadline": "2026-06-10",
+      "capacity_mw": 2,
+      "source": "Vietnam Procurement"
+    },
+    {
+      "country": "印度",
+      "location": "古吉拉特",
+      "name": "200MW 太阳能园区项目",
+      "status": "进行中",
+      "deadline": "2026-07-01",
+      "capacity_mw": 200,
+      "source": "SECI"
+    },
+    {
+      "country": "泰国",
+      "location": "曼谷",
+      "name": "商业屋顶光伏租赁项目",
+      "status": "进行中",
+      "deadline": "2026-06-20",
+      "capacity_mw": 8,
+      "source": "ERC Thailand"
+    }
+  ],
+  "north_america": [
+    {
+      "country": "美国",
+      "location": "加州",
+      "name": "50MW 公用事业级太阳能+储能项目",
+      "status": "进行中",
+      "deadline": "2026-08-01",
+      "capacity_mw": 50,
+      "source": "SAM.gov"
+    },
+    {
+      "country": "美国",
+      "location": "德州",
+      "name": "独立储能项目咨询",
+      "status": "进行中",
+      "deadline": "2026-07-18",
+      "capacity_mw": 30,
+      "source": "SAM.gov"
+    },
+    {
+      "country": "美国",
+      "location": "纽约",
+      "name": "公共事业屋顶光伏招标",
+      "status": "进行中",
+      "deadline": "2026-08-01",
+      "capacity_mw": 15,
+      "source": "SAM.gov"
+    }
+  ],
+  "south_america": [
+    {
+      "country": "巴西",
+      "location": "圣保罗",
+      "name": "分布式光伏项目采购",
+      "status": "进行中",
+      "deadline": "2026-05-18",
+      "capacity_mw": 12,
+      "source": "ComprasNet"
+    },
+    {
+      "country": "巴西",
+      "location": "里约",
+      "name": "储能系统试验项目咨询",
+      "status": "进行中",
+      "deadline": "2026-06-22",
+      "capacity_mw": 5,
+      "source": "ComprasNet"
+    },
+    {
+      "country": "巴西",
+      "location": "巴拉那",
+      "name": "农业太阳能需求招标",
+      "status": "进行中",
+      "deadline": "2026-07-05",
+      "capacity_mw": 8,
+      "source": "ComprasNet"
+    }
+  ],
+  "africa": [
+    {
+      "country": "南非",
+      "location": "开普敦",
+      "name": "10MW 私人电力采购协议需求",
+      "status": "进行中",
+      "deadline": "2026-06-01",
+      "capacity_mw": 10,
+      "source": "eTenders"
+    },
+    {
+      "country": "南非",
+      "location": "约翰内斯堡",
+      "name": "市政微电网项目招标",
+      "status": "进行中",
+      "deadline": "2026-07-15",
+      "capacity_mw": 3,
+      "source": "eTenders"
+    },
+    {
+      "country": "南非",
+      "location": "德班",
+      "name": "工商业储能需求咨询",
+      "status": "进行中",
+      "deadline": "2026-06-28",
+      "capacity_mw": 5,
+      "source": "eTenders"
+    }
+  ],
+  "oceania": [
+    {
+      "country": "澳大利亚",
+      "location": "新南威尔士",
+      "name": "100MW 大电池项目招标",
+      "status": "进行中",
+      "deadline": "2026-08-15",
+      "capacity_mw": 100,
+      "source": "AusTender"
+    },
+    {
+      "country": "澳大利亚",
+      "location": "维多利亚",
+      "name": "户用储能补贴计划需求",
+      "status": "进行中",
+      "deadline": "2026-07-31",
+      "capacity_mw": 0,
+      "source": "AusTender"
+    },
+    {
+      "country": "澳大利亚",
+      "location": "昆士兰",
+      "name": "太阳能农场开发权招标",
+      "status": "进行中",
+      "deadline": "2026-06-25",
+      "capacity_mw": 75,
+      "source": "AusTender"
+    }
+  ]
+}
