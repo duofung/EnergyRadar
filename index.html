@@ -283,7 +283,10 @@ function getFlag(country) {
 
 function statusHTML(status) {
   const isActive = status === '进行中';
-  return `<span class="tender-status ${isActive ? 'active' : 'upcoming'}">${status}</span>`;
+  const isPending = status === '已开标' || status === '已发布' || status === '已截止';
+  const isPolicy = status === '政策生效' || status === '征求意见';
+  const cls = isActive ? 'active' : (isPolicy ? 'active' : 'upcoming');
+  return `<span class="tender-status ${cls}">${status}</span>`;
 }
 
 function renderCard(region, tenders) {
