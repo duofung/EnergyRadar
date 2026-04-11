@@ -124,7 +124,7 @@ def fetch_ted_europe() -> list:
 
     for country_code, country_cn in EU_COUNTRIES.items():
         for cpv in CPV_CODES:
-            query = f'country = "{country_code}" AND cpv = "{cpv}"'
+            query = f'buyer-country = {country_code} AND cpv = {cpv}'
             try:
                 resp = requests.post(
                     TED_API_URL,
@@ -169,7 +169,7 @@ def fetch_ted_europe() -> list:
 
                             if title:
                                 name_cn = translate_to_chinese(str(title))
-                                tender_url = f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else ""
+                                tender_url = f"https://ted.europa.eu/en/notice/-/detail/{pub_number}" if pub_number else ""
                                 tenders.append({
                                     "country": country_cn,
                                     "location": country_cn,
@@ -264,28 +264,24 @@ def fetch_ted_asia() -> list:
     print("[抓取] 🌏 TED Europa — 亚洲能源项目")
     tenders = []
 
-    # 搜索履行地在亚洲各国的太阳能项目
-    queries = [
-        'place-of-performance = "VNM" AND cpv = "09330000"',  # 越南
-        'place-of-performance = "IND" AND cpv = "09330000"',  # 印度
-        'place-of-performance = "THA" AND cpv = "09330000"',  # 泰国
-        'place-of-performance = "IDN" AND cpv = "09330000"',  # 印尼
-        'place-of-performance = "MYS" AND cpv = "09330000"',  # 马来西亚
-        'place-of-performance = "PHL" AND cpv = "09330000"',  # 菲律宾
-        'place-of-performance = "SAU" AND cpv = "09330000"',  # 沙特
-        'place-of-performance = "ARE" AND cpv = "09330000"',  # 阿联酋
-        'place-of-performance = "JPN" AND cpv = "09330000"',  # 日本
-        'place-of-performance = "KOR" AND cpv = "09330000"',  # 韩国
-        'place-of-performance = "PAK" AND cpv = "09330000"',  # 巴基斯坦
-    ]
-
-    country_map = {
+    # 用 buyer-country 搜索非EU国家的采购方（部分国际机构从EU采购涉及亚洲项目）
+    # 同时尝试全文搜索关键词匹配
+    asia_countries = {
         "VNM": "越南", "IND": "印度", "THA": "泰国", "IDN": "印度尼西亚",
         "MYS": "马来西亚", "PHL": "菲律宾", "SAU": "沙特阿拉伯", "ARE": "阿联酋",
         "JPN": "日本", "KOR": "韩国", "PAK": "巴基斯坦",
     }
 
-    for query in queries:
+    # 搜索策略：用全文搜索国家英文名 + 太阳能关键词
+    country_en = {
+        "VNM": "Vietnam", "IND": "India", "THA": "Thailand", "IDN": "Indonesia",
+        "MYS": "Malaysia", "PHL": "Philippines", "SAU": "Saudi", "ARE": "Emirates",
+        "JPN": "Japan", "KOR": "Korea", "PAK": "Pakistan",
+    }
+
+    for code, cn_name in asia_countries.items():
+        en_name = country_en.get(code, "")
+        query = f'cpv = 09330000 AND FT ~ "{en_name} solar"'
         try:
             resp = requests.post(
                 TED_API_URL,
@@ -308,9 +304,8 @@ def fetch_ted_asia() -> list:
                         deadline = str(notice.get("submission-deadline") or notice.get("DT") or "")[:10]
                         pub_number = str(notice.get("publication-number") or notice.get("ND") or "")
 
-                        # 从查询中提取国家代码
-                        country_code = query.split('"')[1]
-                        country_cn = country_map.get(country_code, country_code)
+                        # 使用当前循环的国家信息
+                        country_cn = cn_name
 
                         if title:
                             name_cn = translate_to_chinese(str(title))
@@ -321,7 +316,7 @@ def fetch_ted_asia() -> list:
                                 "source": "TED Europa",
                                 "url": f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else "",
                             })
-                print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
+                print(f"  ✅ [{cn_name}] → {len(notices) if isinstance(notices, list) else 0} 条")
             else:
                 print(f"  ⚠️ HTTP {resp.status_code}")
         except Exception as e:
@@ -867,6 +862,25 @@ def run():
 
     for k in grouped:
         grouped[k].sort(key=lambda x: x.get("deadline","9999"))
+
+    # ── 保护机制：如果某大洲 API 结果太少，合并保留已有数据 ──
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+    except:
+        existing = {}
+
+    MIN_COUNTS = {"europe": 8, "asia": 8, "north_america": 5, "south_america": 2, "africa": 2, "oceania": 2}
+    for region, min_count in MIN_COUNTS.items():
+        if len(grouped.get(region, [])) < min_count and len(existing.get(region, [])) >= min_count:
+            # 合并：API 新数据 + 已有数据去重
+            existing_names = {t.get("name") for t in grouped.get(region, [])}
+            for t in existing.get(region, []):
+                if t.get("name") not in existing_names:
+                    grouped[region].append(t)
+                    existing_names.add(t.get("name"))
+            grouped[region].sort(key=lambda x: x.get("deadline","9999"))
+            print(f"  🔄 {region}: API仅{len(grouped[region]) - len(existing[region])}条新数据，已合并保留共{len(grouped[region])}条")
 
     grouped["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M")
 
