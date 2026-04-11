@@ -89,90 +89,109 @@ def translate_to_chinese(text: str) -> str:
 #   31440000 - 蓄电池 (Batteries)
 #   45261215 - 太阳能屋顶工程
 
-def fetch_ted_germany() -> list:
-    """从 TED API 抓取德国能源招标（真实数据）"""
+def fetch_ted_europe() -> list:
+    """
+    从 TED API 抓取欧洲多国能源/太阳能/储能招标（真实数据）
+    覆盖: 德国 + 奥地利 + 瑞士 + 意大利 + 西班牙 + 波兰 + 捷克 + 罗马尼亚
+    TED Search API — 免费，匿名访问
+    """
     import requests
 
-    print("[抓取] 🇩🇪 TED Europa — 德国能源招标")
+    print("[抓取] 🇪🇺 TED Europa — 欧洲多国能源招标")
     tenders = []
 
-    # TED Expert Query 语法
-    queries = [
-        'country = "DEU" AND cpv = "09330000"',   # 太阳能
-        'country = "DEU" AND cpv = "31440000"',   # 储能/电池
-        'country = "DEU" AND cpv = "45261215"',   # 光伏屋顶工程
-    ]
+    # 国家代码 → 中文名映射（TED 使用 ISO 3166-1 Alpha-3）
+    EU_COUNTRIES = {
+        "DEU": "德国",
+        "AUT": "奥地利",
+        "CHE": "瑞士",
+        "ITA": "意大利",
+        "ESP": "西班牙",
+        "POL": "波兰",
+        "CZE": "捷克",
+        "ROU": "罗马尼亚",
+    }
 
-    for query in queries:
-        try:
-            resp = requests.post(
-                TED_API_URL,
-                headers={"Content-Type": "application/json", "Accept": "application/json"},
-                json={
-                    "query": query,
-                    "fields": ["publication-number", "notice-title", "submission-deadline",
-                               "buyer-name", "cpv-code", "place-of-performance"],
-                    "pageSize": 20,
-                    "pageNum": 1,
-                    "scope": "ACTIVE",
-                },
-                timeout=30,
-            )
+    # CPV 代码组合：太阳能 + 储能 + 光伏工程
+    CPV_CODES = ["09330000", "31440000", "45261215"]
 
-            if resp.status_code == 200:
-                data = resp.json()
-                notices = data.get("notices", data.get("results", []))
+    for country_code, country_cn in EU_COUNTRIES.items():
+        for cpv in CPV_CODES:
+            query = f'country = "{country_code}" AND cpv = "{cpv}"'
+            try:
+                resp = requests.post(
+                    TED_API_URL,
+                    headers={"Content-Type": "application/json", "Accept": "application/json"},
+                    json={
+                        "query": query,
+                        "fields": ["publication-number", "notice-title", "submission-deadline",
+                                   "buyer-name", "cpv-code", "place-of-performance"],
+                        "pageSize": 10,
+                        "pageNum": 1,
+                        "scope": "ACTIVE",
+                    },
+                    timeout=30,
+                )
 
-                if isinstance(notices, list):
-                    for notice in notices[:10]:
-                        if not isinstance(notice, dict):
-                            continue
+                if resp.status_code == 200:
+                    data = resp.json()
+                    notices = data.get("notices", data.get("results", []))
 
-                        title = (notice.get("notice-title") or notice.get("title") or
-                                 notice.get("TI") or "")
-                        if isinstance(title, list):
-                            title = title[0] if title else ""
-                        if isinstance(title, dict):
-                            title = title.get("de", title.get("en", str(title)))
+                    if isinstance(notices, list):
+                        for notice in notices[:5]:  # 每国每CPV最多5条
+                            if not isinstance(notice, dict):
+                                continue
 
-                        deadline = str(notice.get("submission-deadline") or
-                                       notice.get("deadline") or notice.get("DT") or "")[:10]
+                            title = (notice.get("notice-title") or notice.get("title") or
+                                     notice.get("TI") or "")
+                            if isinstance(title, list):
+                                title = title[0] if title else ""
+                            if isinstance(title, dict):
+                                # 尝试取对应语言，兜底英语
+                                lang_map = {"DEU":"de","AUT":"de","CHE":"de","ITA":"it",
+                                            "ESP":"es","POL":"pl","CZE":"cs","ROU":"ro"}
+                                lang = lang_map.get(country_code, "en")
+                                title = title.get(lang, title.get("en", str(title)))
 
-                        pub_number = str(notice.get("publication-number") or
-                                         notice.get("ND") or "")
+                            deadline = str(notice.get("submission-deadline") or
+                                           notice.get("deadline") or notice.get("DT") or "")[:10]
+                            pub_number = str(notice.get("publication-number") or
+                                             notice.get("ND") or "")
 
-                        if title:
-                            name_cn = translate_to_chinese(str(title))
-                            # TED 公告链接格式: https://ted.europa.eu/en/notice/{编号}
-                            tender_url = f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else ""
-                            tenders.append({
-                                "country": "德国",
-                                "location": "德国",
-                                "name": name_cn,
-                                "capacity_mw": 0,
-                                "deadline": deadline or "见公告",
-                                "status": "进行中",
-                                "source": "TED Europa",
-                                "ref": pub_number,
-                                "url": tender_url,
-                            })
+                            if title:
+                                name_cn = translate_to_chinese(str(title))
+                                tender_url = f"https://ted.europa.eu/en/notice/{pub_number}" if pub_number else ""
+                                tenders.append({
+                                    "country": country_cn,
+                                    "location": country_cn,
+                                    "name": name_cn,
+                                    "capacity_mw": 0,
+                                    "deadline": deadline or "见公告",
+                                    "status": "进行中",
+                                    "source": "TED Europa",
+                                    "ref": pub_number,
+                                    "url": tender_url,
+                                })
 
-                print(f"  ✅ [{query[:50]}] → {len(notices) if isinstance(notices, list) else 0} 条")
-            else:
-                print(f"  ⚠️ HTTP {resp.status_code}")
+                    count = len(notices) if isinstance(notices, list) else 0
+                    if count > 0:
+                        print(f"  ✅ {country_cn} CPV {cpv}: {count} 条")
+                elif resp.status_code == 429:
+                    print(f"  ⚠️ TED API 限速，暂停后继续...")
+                    import time; time.sleep(2)
 
-        except Exception as e:
-            print(f"  ❌ 查询失败: {e}")
+            except Exception as e:
+                print(f"  ❌ {country_cn} 查询失败: {e}")
 
     # 去重
     seen = set()
-    unique = []
-    for t in tenders:
-        if t["name"] not in seen:
-            seen.add(t["name"])
-            unique.append(t)
+    unique = [t for t in tenders if t["name"] not in seen and not seen.add(t["name"])]
 
-    print(f"  📊 去重后共 {len(unique)} 条")
+    # 按国家统计
+    from collections import Counter
+    stats = Counter(t["country"] for t in unique)
+    print(f"  📊 欧洲 TED 共 {len(unique)} 条: {dict(stats)}")
+    return unique
     return unique
 
 
@@ -666,7 +685,8 @@ def fetch_australia():
 
 def classify_continent(country):
     m = {
-        "europe": ["德国","法国","英国","西班牙","意大利","荷兰","全德国"],
+        "europe": ["德国","法国","英国","西班牙","意大利","荷兰","全德国",
+                   "奥地利","瑞士","波兰","捷克","罗马尼亚"],
         "asia": ["越南","印度","泰国","日本","韩国","中国","马来西亚","印度尼西亚","全越南","全印度",
                  "哈里亚纳邦","贾坎德邦","旁遮普邦","奥里萨邦","拉贾斯坦邦"],
         "north_america": ["美国","加拿大","墨西哥","联邦","加州","德州","佛州","纽约","亚利桑那",
@@ -688,9 +708,9 @@ def run():
     all_tenders = []
 
     sources = [
-        # 欧洲 — 真实API
-        ("TED 德国", fetch_ted_germany),
-        ("BNetzA", fetch_bundesnetzagentur),
+        # 欧洲 — 真实API（8国）
+        ("TED 欧洲8国", fetch_ted_europe),
+        ("BNetzA 德国", fetch_bundesnetzagentur),
         # 亚洲 — TED API + 官方数据
         ("TED 亚洲", fetch_ted_asia),
         ("印度 SECI", fetch_india_seci),
