@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11 21:00",
+  "updated_at": "2026-04-11 22:00",
   "europe": [
     {
       "country": "德国",
@@ -342,6 +342,116 @@
       "capacity_mw": 0,
       "source": "EVN 越南",
       "url": "https://vas-co.com/en/pv-out-2026-en/"
+    },
+    {
+      "country": "菲律宾",
+      "location": "吕宋/米沙鄢/棉兰老",
+      "name": "GEA-4 太阳能拍卖 — 6GW光伏 + 1.19GW光储 IRESS（已开标）",
+      "capacity_mw": 7190,
+      "deadline": "2025-11-10",
+      "status": "已开标",
+      "source": "DOE Philippines",
+      "url": "https://www.pv-tech.org/philippines-awards-over-6gw-solar-capacity-over-1gw-solar-plus-storage-latest-auction/"
+    },
+    {
+      "country": "菲律宾",
+      "location": "吕宋",
+      "name": "Terra Solar 4,500MWh 储能（世界最大光储项目之一）",
+      "capacity_mw": 0,
+      "deadline": "建设中",
+      "status": "已批准",
+      "source": "DOE Philippines",
+      "url": "https://www.ess-news.com/2025/03/14/philippines-energy-storage-auction-integrated-solar-storage-gea-4/"
+    },
+    {
+      "country": "沙特阿拉伯",
+      "location": "多省",
+      "name": "NREP 第七轮 — 3.1GW光伏 + 2.2GW风电（资格审查中）",
+      "capacity_mw": 5300,
+      "deadline": "2026年内",
+      "status": "资格审查",
+      "source": "SPPC Saudi",
+      "url": "https://www.pv-magazine.com/2026/01/07/saudi-arabia-reveals-qualified-bidders-for-3-1-gw-solar-auction/"
+    },
+    {
+      "country": "沙特阿拉伯",
+      "location": "多省",
+      "name": "NREP 第六轮 — 3GW光伏 + 1.5GW风电（投标中）",
+      "capacity_mw": 4500,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "SPPC Saudi",
+      "url": "https://www.pv-tech.org/saudi-arabia-round-6-tender-pv/"
+    },
+    {
+      "country": "阿联酋",
+      "location": "阿布扎比",
+      "name": "EWEC 太阳能+储能采购（Al Dhafra 后续轮次）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "EWEC UAE",
+      "url": "https://www.ewec.ae/"
+    },
+    {
+      "country": "日本",
+      "location": "全国",
+      "name": "METI 光伏 FIP 拍卖（2026年度 大型地面电站）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "METI Japan",
+      "url": "https://www.enecho.meti.go.jp/"
+    },
+    {
+      "country": "韩国",
+      "location": "全国",
+      "name": "MOTIE 可再生能源招标（光伏+储能，2030目标20%）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "MOTIE Korea",
+      "url": "https://www.motie.go.kr/"
+    },
+    {
+      "country": "泰国",
+      "location": "全国",
+      "name": "EGAT 太阳能采购 — 屋顶 + 浮式光伏计划",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "EGAT Thailand",
+      "url": "https://www.egat.co.th/"
+    },
+    {
+      "country": "马来西亚",
+      "location": "全国",
+      "name": "LSS5 大型太阳能招标（Large Scale Solar 第五轮）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "SEDA Malaysia",
+      "url": "https://www.seda.gov.my/"
+    },
+    {
+      "country": "印度尼西亚",
+      "location": "全国",
+      "name": "PLN 光伏+储能采购（RUPTL 2026目标 6.5GW）",
+      "capacity_mw": 6500,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "PLN Indonesia",
+      "url": "https://www.pln.co.id/"
+    },
+    {
+      "country": "巴基斯坦",
+      "location": "全国",
+      "name": "巴基斯坦太阳能扩张（2024全球第四 17GW安装）",
+      "capacity_mw": 17000,
+      "deadline": "持续",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://iea-pvps.org/"
     }
   ],
   "north_america": [
