@@ -281,7 +281,7 @@
       "deadline": "2026-04-25",
       "capacity_mw": 31,
       "source": "SECI India",
-      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
+      "url": "https://www.seci.co.in/open-tenders"
     },
     {
       "country": "印度",
@@ -291,7 +291,7 @@
       "deadline": "2026-04-30",
       "capacity_mw": 25,
       "source": "SECI India",
-      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
+      "url": "https://www.seci.co.in/open-tenders"
     },
     {
       "country": "印度",
@@ -351,7 +351,7 @@
       "deadline": "2025-11-10",
       "status": "已开标",
       "source": "DOE Philippines",
-      "url": "https://www.pv-tech.org/philippines-awards-over-6gw-solar-capacity-over-1gw-solar-plus-storage-latest-auction/"
+      "url": "https://www.doe.gov.ph/green-energy-auction-program"
     },
     {
       "country": "菲律宾",
@@ -361,7 +361,7 @@
       "deadline": "建设中",
       "status": "已批准",
       "source": "DOE Philippines",
-      "url": "https://www.ess-news.com/2025/03/14/philippines-energy-storage-auction-integrated-solar-storage-gea-4/"
+      "url": "https://www.doe.gov.ph/green-energy-auction-program"
     },
     {
       "country": "沙特阿拉伯",
@@ -371,7 +371,7 @@
       "deadline": "2026年内",
       "status": "资格审查",
       "source": "SPPC Saudi",
-      "url": "https://www.pv-magazine.com/2026/01/07/saudi-arabia-reveals-qualified-bidders-for-3-1-gw-solar-auction/"
+      "url": "https://www.sppc.com.sa/EN/Pages/NREPRoundSeven.aspx"
     },
     {
       "country": "沙特阿拉伯",
@@ -381,7 +381,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "SPPC Saudi",
-      "url": "https://www.pv-tech.org/saudi-arabia-round-6-tender-pv/"
+      "url": "https://www.sppc.com.sa/EN/Pages/NREPRoundSix.aspx"
     },
     {
       "country": "阿联酋",
@@ -391,7 +391,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "EWEC UAE",
-      "url": "https://taiyangnews.info/tenders/zarraf-pv-project-rfp-ewec"
+      "url": "https://ewec.ae/en/generation/solar-energy"
     },
     {
       "country": "日本",
@@ -400,8 +400,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "METI Japan",
-      "url": "https://www.pv-magazine.com/2026/03/09/japans-27th-solar-auction-concludes-with-average-final-price-of-0-029-kwh/"
+      "source": "OCCTO Japan",
+      "url": "https://www.fit-portal.go.jp/"
     },
     {
       "country": "韩国",
@@ -411,7 +411,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "MOTIE Korea",
-      "url": "https://energytracker.asia/renewable-energy-trends-in-asia/"
+      "url": "https://www.motie.go.kr/motie/ms/nt/announce/bbs/bbsList.do"
     },
     {
       "country": "泰国",
@@ -421,7 +421,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "EGAT Thailand",
-      "url": "https://energytracker.asia/renewable-energy-trends-in-asia/"
+      "url": "https://www.egat.co.th/home/en/procurement/"
     },
     {
       "country": "马来西亚",
@@ -431,7 +431,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "SEDA Malaysia",
-      "url": "https://www.sourceofasia.com/renewable-energy-in-southeast-asia-in-2025-2026/"
+      "url": "https://www.st.gov.my/en/web/industry/details/4/3"
     },
     {
       "country": "印度尼西亚",
@@ -441,7 +441,7 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "PLN Indonesia",
-      "url": "https://www.sourceofasia.com/renewable-energy-in-southeast-asia-in-2025-2026/"
+      "url": "https://web.pln.co.id/statics/uploads/2021/10/RUPTL-2021-2030.pdf"
     },
     {
       "country": "巴基斯坦",
@@ -450,8 +450,8 @@
       "capacity_mw": 17000,
       "deadline": "持续",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://iea-pvps.org/wp-content/uploads/2025/04/Snapshot-of-Global-PV-Markets_2025.pdf"
+      "source": "AEDB Pakistan",
+      "url": "https://www.aedb.org/ae-technologies/solar-power/solar-current-status"
     },
     {
       "country": "中国",
@@ -460,8 +460,8 @@
       "capacity_mw": 315000,
       "deadline": "2025年",
       "status": "已发布",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2026/01/28/china-adds-315-gw-of-solar-in-2025/"
+      "source": "国家能源局",
+      "url": "https://www.nea.gov.cn/2026-01/28/c_1310799563.htm"
     },
     {
       "country": "中国",
@@ -470,8 +470,8 @@
       "capacity_mw": 31000,
       "deadline": "2025-12-24",
       "status": "已开标",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2025/12/15/chinese-pv-industry-brief-powerchina-launches-31-gw-solar-procurement/"
+      "source": "中国电建采购平台",
+      "url": "https://ec.powerchina.cn/"
     },
     {
       "country": "中国",
@@ -480,8 +480,8 @@
       "capacity_mw": 0,
       "deadline": "2025-12-04",
       "status": "已开标",
-      "source": "ESS News",
-      "url": "https://www.ess-news.com/2024/12/09/powerchina-receives-bids-for-16-gwh-bess-tender-with-average-price-of-66-5-kwh/"
+      "source": "中国电建采购平台",
+      "url": "https://ec.powerchina.cn/"
     },
     {
       "country": "中国",
@@ -490,8 +490,8 @@
       "capacity_mw": 20000,
       "deadline": "2026-06-30",
       "status": "进行中",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2025/08/01/chinese-pv-industry-brief-china-adds-268-gw-of-renewables-led-by-solar/"
+      "source": "华电集团采购平台",
+      "url": "https://www.chdtp.com/"
     },
     {
       "country": "中国",
@@ -500,8 +500,8 @@
       "capacity_mw": 0,
       "deadline": "2025-06",
       "status": "已开标",
-      "source": "ESS News",
-      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
+      "source": "中能建采购平台",
+      "url": "https://ec.ceec.net.cn/"
     },
     {
       "country": "中国",
@@ -510,8 +510,8 @@
       "capacity_mw": 180000,
       "deadline": "2027",
       "status": "规划中",
-      "source": "Asia Financial",
-      "url": "https://www.asiafinancial.com/china-aiming-to-double-battery-storage-holds-first-solar-auction"
+      "source": "国家能源局",
+      "url": "https://www.nea.gov.cn/"
     },
     {
       "country": "中国",
@@ -520,8 +520,8 @@
       "capacity_mw": 32480,
       "deadline": "2026-02",
       "status": "已发布",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2026/03/27/china-pv-industry-brief-china-adds-32-48-gw-solar-as-polysilicon-prices-fall/"
+      "source": "国家能源局",
+      "url": "https://www.nea.gov.cn/"
     }
   ],
   "north_america": [
@@ -682,8 +682,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "CFE Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     },
     {
       "country": "墨西哥",
@@ -692,8 +692,8 @@
       "capacity_mw": 300,
       "deadline": "2027-07",
       "status": "建设中",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2025/09/25/mexico-launches-tender-for-300-mw-solar-plant/"
+      "source": "CFE Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     },
     {
       "country": "墨西哥",
@@ -702,8 +702,8 @@
       "capacity_mw": 280,
       "deadline": "2028",
       "status": "进行中",
-      "source": "Strategic Energy",
-      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+      "source": "CFE Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     },
     {
       "country": "墨西哥",
@@ -712,8 +712,8 @@
       "capacity_mw": 376,
       "deadline": "2028",
       "status": "进行中",
-      "source": "Strategic Energy",
-      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+      "source": "CFE Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     },
     {
       "country": "墨西哥",
@@ -722,8 +722,8 @@
       "capacity_mw": 180,
       "deadline": "2028",
       "status": "进行中",
-      "source": "Strategic Energy",
-      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+      "source": "CFE Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     },
     {
       "country": "墨西哥",
@@ -732,8 +732,8 @@
       "capacity_mw": 4808,
       "deadline": "2026-2029",
       "status": "已批准",
-      "source": "Mexico Business",
-      "url": "https://mexicobusiness.news/energy/news/cfe-sonora-advance-puerto-penasco-solar-expansion"
+      "source": "SENER Mexico",
+      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
     }
   ],
   "south_america": [
@@ -784,8 +784,8 @@
       "capacity_mw": 713,
       "deadline": "2026年内",
       "status": "已开标",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "Gobierno Argentina",
+      "url": "https://www.argentina.gob.ar/economia/energia/energia-electrica/renovables"
     },
     {
       "country": "哥伦比亚",
@@ -794,8 +794,8 @@
       "capacity_mw": 2000,
       "deadline": "2027",
       "status": "规划中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "MinEnergía Colombia",
+      "url": "https://www.minenergia.gov.co/es/misional/energia-electrica/subastas-de-energia-renovable/"
     },
     {
       "country": "秘鲁",
@@ -804,8 +804,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "规划中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "OSINERGMIN Peru",
+      "url": "https://www.osinergmin.gob.pe/empresas/electricidad/Paginas/subastas.aspx"
     },
     {
       "country": "危地马拉",
@@ -814,8 +814,8 @@
       "capacity_mw": 1400,
       "deadline": "2026-01",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "CNEE Guatemala",
+      "url": "https://www.cnee.gob.gt/wp/?page_id=232"
     },
     {
       "country": "多米尼加",
@@ -824,8 +824,8 @@
       "capacity_mw": 0,
       "deadline": "2026-05",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "CNE Dominicana",
+      "url": "https://www.cne.gob.do/"
     },
     {
       "country": "洪都拉斯",
@@ -834,8 +834,8 @@
       "capacity_mw": 1500,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+      "source": "ENEE Honduras",
+      "url": "https://www.enee.hn/"
     },
     {
       "country": "巴西",
@@ -844,8 +844,8 @@
       "capacity_mw": 50000,
       "deadline": "持续",
       "status": "进行中",
-      "source": "EIA",
-      "url": "https://www.eia.gov/todayinenergy/detail.php?id=64545"
+      "source": "ANEEL Brazil",
+      "url": "https://www.gov.br/aneel/pt-br/assuntos/geracao-distribuida"
     },
     {
       "country": "巴西",
@@ -854,8 +854,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "ESS News",
-      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
+      "source": "ANEEL Brazil",
+      "url": "https://www.gov.br/aneel/pt-br/assuntos/leiloes"
     }
   ],
   "africa": [
@@ -896,8 +896,8 @@
       "capacity_mw": 343,
       "deadline": "分期推进",
       "status": "进行中",
-      "source": "Eskom",
-      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+      "source": "Eskom IPP",
+      "url": "https://www.eskom.co.za/eskom-divisions/gx/independent-power-producer-solutions/"
     },
     {
       "country": "肯尼亚",
@@ -906,8 +906,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+      "source": "EPRA Kenya",
+      "url": "https://www.epra.go.ke/services/licensing/"
     },
     {
       "country": "埃及",
@@ -916,8 +916,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+      "source": "NREA Egypt",
+      "url": "http://nrea.gov.eg/en/Tenders"
     },
     {
       "country": "摩洛哥",
@@ -926,8 +926,8 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "行业动态",
-      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+      "source": "MASEN Morocco",
+      "url": "https://www.masen.ma/en/projects"
     }
   ],
   "oceania": [
@@ -958,8 +958,8 @@
       "capacity_mw": 700,
       "deadline": "2026-05-31",
       "status": "评标中",
-      "source": "SA Gov",
-      "url": "https://reneweconomy.com.au/south-australia-unveils-first-auction-as-worlds-most-advanced-renewables-grid-seeks-long-duration-storage/"
+      "source": "SA Gov FERM",
+      "url": "https://www.energymining.sa.gov.au/industry/modern-energy/firm-exportable-renewable-mechanism"
     },
     {
       "country": "澳大利亚",
@@ -979,7 +979,7 @@
       "deadline": "2026-02-18",
       "status": "已注册",
       "source": "AEMO",
-      "url": "https://www.energy-storage.news/400mwh-grid-forming-new-england-bess-registered-with-australias-aemo/"
+      "url": "https://aemo.com.au/en/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/generation-information"
     },
     {
       "country": "新西兰",
@@ -998,8 +998,8 @@
       "capacity_mw": 0,
       "deadline": "2026-04",
       "status": "已发布",
-      "source": "pv magazine",
-      "url": "https://www.pv-magazine.com/2026/04/09/new-zealand-sets-10-kw-default-export-limit-for-rooftop-solar/"
+      "source": "EA New Zealand",
+      "url": "https://www.ea.govt.nz/news/eye-on-electricity/default-export-energy-limit-for-distributed-energy-resources/"
     },
     {
       "country": "澳大利亚",
@@ -1008,8 +1008,8 @@
       "capacity_mw": 300,
       "deadline": "2026-2028",
       "status": "建设中",
-      "source": "ESS News",
-      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
+      "source": "AEMO",
+      "url": "https://aemo.com.au/en/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/generation-information"
     }
   ]
 }
