@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11 22:00",
+  "updated_at": "2026-04-12 10:00",
   "europe": [
     {
       "country": "德国",
@@ -452,6 +452,76 @@
       "status": "进行中",
       "source": "行业动态",
       "url": "https://iea-pvps.org/wp-content/uploads/2025/04/Snapshot-of-Global-PV-Markets_2025.pdf"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "中国2025年新增光伏315GW（全球之最，累计1.2TW）",
+      "capacity_mw": 315000,
+      "deadline": "2025年",
+      "status": "已发布",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2026/01/28/china-adds-315-gw-of-solar-in-2025/"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "PowerChina 31GW 光伏组件集采（2026项目，含TOPCon/HJT/BC）",
+      "capacity_mw": 31000,
+      "deadline": "2025-12-24",
+      "status": "已开标",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2025/12/15/chinese-pv-industry-brief-powerchina-launches-31-gw-solar-procurement/"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "PowerChina 16GWh 储能集采（史上最大储能招标，均价$66/kWh）",
+      "capacity_mw": 0,
+      "deadline": "2025-12-04",
+      "status": "已开标",
+      "source": "ESS News",
+      "url": "https://www.ess-news.com/2024/12/09/powerchina-receives-bids-for-16-gwh-bess-tender-with-average-price-of-66-5-kwh/"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "华电集团 20GW 光伏组件框架采购（2025-2026）",
+      "capacity_mw": 20000,
+      "deadline": "2026-06-30",
+      "status": "进行中",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2025/08/01/chinese-pv-industry-brief-china-adds-268-gw-of-renewables-led-by-solar/"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "中能建 25GWh 储能集采（创纪录，4h系统$51/kWh新低）",
+      "capacity_mw": 0,
+      "deadline": "2025-06",
+      "status": "已开标",
+      "source": "ESS News",
+      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "NEA 新能源储能目标180GW（2027年前翻倍，投资2500亿元）",
+      "capacity_mw": 180000,
+      "deadline": "2027",
+      "status": "规划中",
+      "source": "Asia Financial",
+      "url": "https://www.asiafinancial.com/china-aiming-to-double-battery-storage-holds-first-solar-auction"
+    },
+    {
+      "country": "中国",
+      "location": "全国",
+      "name": "2026年1-2月新增光伏32.48GW（CfD拍卖机制生效后调整期）",
+      "capacity_mw": 32480,
+      "deadline": "2026-02",
+      "status": "已发布",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2026/03/27/china-pv-industry-brief-china-adds-32-48-gw-solar-as-polysilicon-prices-fall/"
     }
   ],
   "north_america": [
@@ -564,6 +634,106 @@
       "capacity_mw": 0,
       "source": "CanadaBuys",
       "url": "https://canadabuys.canada.ca/en/tender-opportunities?search=solar+energy"
+    },
+    {
+      "country": "美国",
+      "location": "加利福尼亚",
+      "name": "加州 CEC 清洁能源研发资助（GFO-25-306，截止6/9）",
+      "capacity_mw": 0,
+      "deadline": "2026-06-09",
+      "status": "进行中",
+      "source": "CEC California",
+      "url": "https://www.energy.ca.gov/funding-opportunities/solicitations"
+    },
+    {
+      "country": "美国",
+      "location": "加利福尼亚",
+      "name": "Clean Power Alliance 2026清洁能源+储能+调度热能采购",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "CPA California",
+      "url": "https://cleanpoweralliance.org/contracting-opportunities/"
+    },
+    {
+      "country": "美国",
+      "location": "加利福尼亚",
+      "name": "CC Power 联合CCA — 200MW固定清洁资源采购（含BESS）",
+      "capacity_mw": 200,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "CA Community Power",
+      "url": "https://cacommunitypower.org/solicitations/"
+    },
+    {
+      "country": "美国",
+      "location": "伊利诺伊",
+      "name": "伊利诺伊州 Clean Grid Act — 公用事业3GW储能目标(2030)",
+      "capacity_mw": 3000,
+      "deadline": "2030",
+      "status": "政策生效",
+      "source": "IL Legislature",
+      "url": "https://www.morganlewis.com/pubs/2026/03/state-energy-storage-policy-trends-for-2026"
+    },
+    {
+      "country": "墨西哥",
+      "location": "全国",
+      "name": "墨西哥 CFE 太阳能+储能采购（结构性能源转型需求）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "墨西哥",
+      "location": "索诺拉州",
+      "name": "CFE Puerto Peñasco III — 300MW光伏 + 103MW储能（拉美最大太阳能项目）",
+      "capacity_mw": 300,
+      "deadline": "2027-07",
+      "status": "建设中",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2025/09/25/mexico-launches-tender-for-300-mw-solar-plant/"
+    },
+    {
+      "country": "墨西哥",
+      "location": "索诺拉州",
+      "name": "CFE Puerto Peñasco IV — 280MW光伏 + 储能（2026年2月开工）",
+      "capacity_mw": 280,
+      "deadline": "2028",
+      "status": "进行中",
+      "source": "Strategic Energy",
+      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+    },
+    {
+      "country": "墨西哥",
+      "location": "科阿韦拉州",
+      "name": "CFE Carbón II 光伏电站 — 376MW + 储能（2026开工）",
+      "capacity_mw": 376,
+      "deadline": "2028",
+      "status": "进行中",
+      "source": "Strategic Energy",
+      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+    },
+    {
+      "country": "墨西哥",
+      "location": "科阿韦拉州",
+      "name": "CFE Río Escondido 光伏 — 180MW + 储能",
+      "capacity_mw": 180,
+      "deadline": "2028",
+      "status": "进行中",
+      "source": "Strategic Energy",
+      "url": "https://strategicenergy.eu/mexico-to-add-over-1-5-gw-of-clean-power-and-storage-as-it-expands-latin-americas-largest-solar-plant/"
+    },
+    {
+      "country": "墨西哥",
+      "location": "全国",
+      "name": "SENER 批准20个私营可再生能源项目 — 3,320MW + 1,488MW储能",
+      "capacity_mw": 4808,
+      "deadline": "2026-2029",
+      "status": "已批准",
+      "source": "Mexico Business",
+      "url": "https://mexicobusiness.news/energy/news/cfe-sonora-advance-puerto-penasco-solar-expansion"
     }
   ],
   "south_america": [
@@ -606,6 +776,86 @@
       "status": "进行中",
       "source": "CNE Chile",
       "url": "https://www.cne.cl/normativas/electrica/consulta-publica/"
+    },
+    {
+      "country": "阿根廷",
+      "location": "布宜诺斯艾利斯",
+      "name": "AlmaGBA 储能招标 — 713MW BESS（大布宜诺斯区，将推广至其他地区）",
+      "capacity_mw": 713,
+      "deadline": "2026年内",
+      "status": "已开标",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "哥伦比亚",
+      "location": "全国",
+      "name": "哥伦比亚 2025新增~2GW光伏，2027可靠性电力采购（储能关注）",
+      "capacity_mw": 2000,
+      "deadline": "2027",
+      "status": "规划中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "秘鲁",
+      "location": "全国",
+      "name": "秘鲁可再生能源拍卖（新兴市场，国际投资者关注度提升）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "规划中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "危地马拉",
+      "location": "全国",
+      "name": "危地马拉 1,400MW 可再生能源拍卖（上轮超标4倍，1000MW vs 235MW需求）",
+      "capacity_mw": 1400,
+      "deadline": "2026-01",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "多米尼加",
+      "location": "全国",
+      "name": "多米尼加 32个光伏+风电+储能项目招标（2026年5月定标）",
+      "capacity_mw": 0,
+      "deadline": "2026-05",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "洪都拉斯",
+      "location": "全国",
+      "name": "洪都拉斯 多轮连续拍卖 — 1,500MW 可再生能源采购",
+      "capacity_mw": 1500,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://strategicenergy.eu/where-to-invest-in-renewables-in-2026-a-market-by-market-snapshot-of-latin-america/"
+    },
+    {
+      "country": "巴西",
+      "location": "全国",
+      "name": "ANEEL 分布式光伏 — 全球增长最快（已超50GW累计装机）",
+      "capacity_mw": 50000,
+      "deadline": "持续",
+      "status": "进行中",
+      "source": "EIA",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=64545"
+    },
+    {
+      "country": "巴西",
+      "location": "全国",
+      "name": "巴西储能市场爆发 — 电池制造商加速布局",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "ESS News",
+      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
     }
   ],
   "africa": [
@@ -647,6 +897,36 @@
       "deadline": "分期推进",
       "status": "进行中",
       "source": "Eskom",
+      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+    },
+    {
+      "country": "肯尼亚",
+      "location": "全国",
+      "name": "肯尼亚 EPRA 太阳能+风电采购（东非可再生能源领跑者）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+    },
+    {
+      "country": "埃及",
+      "location": "全国",
+      "name": "埃及 NREA 太阳能招标（Benban后续 + 新建GW级电站）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
+    },
+    {
+      "country": "摩洛哥",
+      "location": "全国",
+      "name": "摩洛哥 MASEN Noor 太阳能计划（GW级CSP+PV混合项目）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
       "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
     }
   ],
@@ -700,6 +980,36 @@
       "status": "已注册",
       "source": "AEMO",
       "url": "https://www.energy-storage.news/400mwh-grid-forming-new-england-bess-registered-with-australias-aemo/"
+    },
+    {
+      "country": "新西兰",
+      "location": "全国",
+      "name": "新西兰 MBIE 可再生能源投资计划（2030目标100%可再生电力）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "行业动态",
+      "url": "https://www.mbie.govt.nz/building-and-energy/energy-and-natural-resources/energy-generation-and-markets/renewable-energy/"
+    },
+    {
+      "country": "新西兰",
+      "location": "全国",
+      "name": "新西兰 Electricity Authority — 屋顶光伏出口限制10kW新规",
+      "capacity_mw": 0,
+      "deadline": "2026-04",
+      "status": "已发布",
+      "source": "pv magazine",
+      "url": "https://www.pv-magazine.com/2026/04/09/new-zealand-sets-10-kw-default-export-limit-for-rooftop-solar/"
+    },
+    {
+      "country": "澳大利亚",
+      "location": "全国",
+      "name": "Google 300MW/30GWh 铁空气电池储能（世界最大多日储能）",
+      "capacity_mw": 300,
+      "deadline": "2026-2028",
+      "status": "建设中",
+      "source": "ESS News",
+      "url": "https://www.ess-news.com/2025/06/26/china-energy-engineering-launches-record-25-gwh-storage-tender-as-prices-hit-historic-low/"
     }
   ]
 }
