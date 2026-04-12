@@ -12,123 +12,61 @@
   --border:#1e1e28;--border-active:#2a2a38;
   --text-primary:#e8e8ed;--text-secondary:#7a7a88;--text-tertiary:#4a4a56;
   --accent:#00e893;--accent-dim:rgba(0,232,147,.08);
-  --accent-glow:rgba(0,232,147,.15);
   --warn:#f5a623;--info:#4a9eff;--done:#8b8b98;
   --radius:10px;--radius-sm:6px;
   --font-display:'Space Mono','JetBrains Mono',monospace;
   --font-body:'Noto Sans SC',system-ui,sans-serif;
   --font-mono:'JetBrains Mono','Space Mono',monospace;
-  --sidebar-w:250px;
-  --header-h:54px;
+  --sidebar-w:250px;--header-h:54px;
 }
 html{font-size:15px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
-body::before{
-  content:'';position:fixed;inset:0;
-  background:
-    repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,232,147,.007) 2px,rgba(0,232,147,.007) 4px),
-    radial-gradient(ellipse 800px 600px at 15% 20%,rgba(0,232,147,.025),transparent 70%),
-    radial-gradient(ellipse 600px 400px at 85% 70%,rgba(74,158,255,.015),transparent 70%);
-  pointer-events:none;z-index:0;
-}
-
-/* ═══ HEADER ═══ */
-.header{
-  position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;
-  background:rgba(5,5,8,.92);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;padding:0 20px;gap:16px;
-}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,232,147,.007) 2px,rgba(0,232,147,.007) 4px),radial-gradient(ellipse 800px 600px at 15% 20%,rgba(0,232,147,.025),transparent 70%),radial-gradient(ellipse 600px 400px at 85% 70%,rgba(74,158,255,.015),transparent 70%);pointer-events:none;z-index:0}
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;min-width:var(--sidebar-w);flex-shrink:0}
-.radar-icon{
-  width:30px;height:30px;position:relative;
-  border:2px solid var(--accent);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-}
-.radar-icon::before{
-  content:'';position:absolute;width:14px;height:14px;
-  border-top:2px solid var(--accent);border-right:2px solid var(--accent);
-  border-radius:0 50% 0 0;transform-origin:bottom left;
-  animation:sweep 3s linear infinite;opacity:.6;
-}
+.radar-icon{width:30px;height:30px;position:relative;border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.radar-icon::before{content:'';position:absolute;width:14px;height:14px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);border-radius:0 50% 0 0;transform-origin:bottom left;animation:sweep 3s linear infinite;opacity:.6}
 @keyframes sweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .radar-icon::after{content:'';width:4px;height:4px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent)}
 .brand-text{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
 .brand-sub{font-size:.6rem;color:var(--text-tertiary);letter-spacing:1px;font-family:var(--font-mono)}
-
 .header-stats{display:flex;gap:20px;margin-left:auto;align-items:center}
 .stat-item{text-align:center}
 .stat-num{font-family:var(--font-mono);font-size:1.05rem;font-weight:700;color:var(--accent)}
 .stat-label{font-size:.55rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:1px}
 .header-time{font-family:var(--font-mono);font-size:.65rem;color:var(--text-tertiary);white-space:nowrap}
-
-/* ═══ LAYOUT ═══ */
 .app{display:flex;margin-top:var(--header-h);min-height:calc(100vh - var(--header-h))}
-
-/* ═══ SIDEBAR ═══ */
-.sidebar{
-  position:fixed;top:var(--header-h);left:0;bottom:0;width:var(--sidebar-w);
-  background:var(--surface);border-right:1px solid var(--border);
-  overflow-y:auto;z-index:50;padding:10px 0;
-  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
-}
+.sidebar{position:fixed;top:var(--header-h);left:0;bottom:0;width:var(--sidebar-w);background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:50;padding:10px 0;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 .sidebar::-webkit-scrollbar{width:3px}
 .sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-
 .nav-section{padding:6px 12px}
 .nav-section-title{font-family:var(--font-mono);font-size:.55rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
-
-.nav-item{
-  display:flex;align-items:center;gap:9px;padding:8px 12px;
-  cursor:pointer;border-radius:var(--radius-sm);margin:1px 6px;
-  transition:all .15s;position:relative;font-size:.8rem;
-}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 12px;cursor:pointer;border-radius:var(--radius-sm);margin:1px 6px;transition:all .15s;position:relative;font-size:.8rem}
 .nav-item:hover{background:rgba(255,255,255,.03)}
 .nav-item.active{background:var(--accent-dim);color:var(--accent)}
 .nav-item.active::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:2px;background:var(--accent);border-radius:1px}
 .nav-flag{font-size:1rem;width:20px;text-align:center;flex-shrink:0}
 .nav-label{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.nav-count{
-  font-family:var(--font-mono);font-size:.6rem;
-  background:rgba(255,255,255,.05);padding:2px 6px;border-radius:10px;
-  color:var(--text-secondary);min-width:18px;text-align:center;
-}
+.nav-count{font-family:var(--font-mono);font-size:.6rem;background:rgba(255,255,255,.05);padding:2px 6px;border-radius:10px;color:var(--text-secondary);min-width:18px;text-align:center}
 .nav-item.active .nav-count{background:rgba(0,232,147,.15);color:var(--accent)}
 .nav-continent{font-weight:500}
 .nav-country{padding-left:24px;font-size:.75rem}
 .nav-country .nav-flag{font-size:.9rem;width:18px}
 .nav-divider{height:1px;background:var(--border);margin:8px 12px}
-
-/* ═══ MAIN ═══ */
 .main{margin-left:var(--sidebar-w);flex:1;padding:18px 22px 40px;position:relative;z-index:1}
-
-.content-header{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);
-}
+.content-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
 .content-title{display:flex;align-items:center;gap:10px}
 .content-title h2{font-family:var(--font-display);font-size:.95rem;font-weight:700;letter-spacing:1px}
 .content-title .flag{font-size:1.2rem}
 .content-count{font-family:var(--font-mono);font-size:.65rem;color:var(--text-tertiary)}
-
 .country-pills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
-.pill{
-  font-size:.7rem;padding:4px 10px;border-radius:18px;cursor:pointer;
-  background:rgba(255,255,255,.03);border:1px solid var(--border);
-  color:var(--text-secondary);transition:all .15s;display:flex;align-items:center;gap:4px;
-}
+.pill{font-size:.7rem;padding:4px 10px;border-radius:18px;cursor:pointer;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-secondary);transition:all .15s;display:flex;align-items:center;gap:4px}
 .pill:hover{background:rgba(255,255,255,.06);color:var(--text-primary)}
 .pill.active{background:var(--accent-dim);border-color:rgba(0,232,147,.25);color:var(--accent)}
 .pill-flag{font-size:.8rem}
 .pill-count{font-family:var(--font-mono);font-size:.55rem;opacity:.7}
-
-/* ═══ TENDER CARDS ═══ */
 .tender-list{display:flex;flex-direction:column;gap:4px}
-.tender-card{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:12px 14px;transition:all .2s;
-  display:grid;grid-template-columns:26px 1fr auto;gap:9px;align-items:start;
-}
+.tender-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;transition:all .2s;display:grid;grid-template-columns:26px 1fr auto;gap:9px;align-items:start}
 .tender-card:hover{background:var(--card-hover);border-color:var(--border-active)}
 .tender-flag{font-size:1rem;padding-top:1px}
 .tender-body{min-width:0}
@@ -136,43 +74,22 @@ body::before{
 .tender-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .tender-status{font-size:.62rem;padding:2px 7px;border-radius:10px;font-weight:500;display:inline-flex;align-items:center;gap:3px}
 .tender-status::before{content:'';width:4px;height:4px;border-radius:50%;flex-shrink:0}
-.status-active{background:rgba(0,232,147,.1);color:#00e893}
-.status-active::before{background:#00e893}
-.status-upcoming{background:rgba(245,166,35,.1);color:#f5a623}
-.status-upcoming::before{background:#f5a623}
-.status-done{background:rgba(139,139,152,.1);color:#8b8b98}
-.status-done::before{background:#8b8b98}
-.status-info{background:rgba(74,158,255,.1);color:#4a9eff}
-.status-info::before{background:#4a9eff}
+.status-active{background:rgba(0,232,147,.1);color:#00e893}.status-active::before{background:#00e893}
+.status-upcoming{background:rgba(245,166,35,.1);color:#f5a623}.status-upcoming::before{background:#f5a623}
+.status-done{background:rgba(139,139,152,.1);color:#8b8b98}.status-done::before{background:#8b8b98}
+.status-info{background:rgba(74,158,255,.1);color:#4a9eff}.status-info::before{background:#4a9eff}
 .tender-deadline{font-family:var(--font-mono);font-size:.65rem;color:var(--text-secondary)}
 .tender-capacity{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);opacity:.7}
 .tender-link{flex-shrink:0;padding-top:1px}
-.tender-link a{
-  font-size:.63rem;padding:4px 9px;border-radius:var(--radius-sm);
-  background:rgba(255,255,255,.03);border:1px solid var(--border);
-  color:var(--text-secondary);text-decoration:none;transition:all .15s;
-  display:flex;align-items:center;gap:3px;white-space:nowrap;font-family:var(--font-mono);
-}
+.tender-link a{font-size:.63rem;padding:4px 9px;border-radius:var(--radius-sm);background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-secondary);text-decoration:none;transition:all .15s;display:flex;align-items:center;gap:3px;white-space:nowrap;font-family:var(--font-mono)}
 .tender-link a:hover{background:var(--accent-dim);border-color:rgba(0,232,147,.3);color:var(--accent)}
-.tender-link a::after{content:'↗';font-size:.7rem}
-
+.tender-link a::after{content:'\2197';font-size:.7rem}
 .empty-state{text-align:center;padding:60px 20px;color:var(--text-tertiary)}
 .empty-state .icon{font-size:2.5rem;margin-bottom:12px;opacity:.5}
-
-/* ═══ CTA ═══ */
-.cta-float{
-  position:fixed;bottom:22px;right:22px;z-index:200;
-  background:var(--accent);color:#050508;
-  padding:11px 18px;border-radius:28px;font-size:.75rem;font-weight:700;
-  text-decoration:none;box-shadow:0 4px 24px rgba(0,232,147,.25);
-  transition:all .2s;display:flex;align-items:center;gap:7px;
-}
+.cta-float{position:fixed;bottom:22px;right:22px;z-index:200;background:var(--accent);color:#050508;padding:11px 18px;border-radius:28px;font-size:.75rem;font-weight:700;text-decoration:none;box-shadow:0 4px 24px rgba(0,232,147,.25);transition:all .2s;display:flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:var(--font-body)}
 .cta-float:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,232,147,.35)}
-
-/* ═══ MOBILE ═══ */
 .mobile-toggle{display:none;width:30px;height:30px;cursor:pointer;border:1px solid var(--border);border-radius:var(--radius-sm);background:transparent;color:var(--text-primary);font-size:1rem;align-items:center;justify-content:center}
 .sidebar-overlay{display:none;position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
-
 @media(max-width:768px){
   .sidebar{transform:translateX(-100%);transition:transform .25s;z-index:60;width:270px}
   .sidebar.open{transform:translateX(0)}
@@ -186,142 +103,197 @@ body::before{
   .tender-link{grid-column:1/-1;justify-self:end}
   .cta-float{bottom:14px;right:14px;padding:9px 14px;font-size:.7rem}
 }
-@media(max-width:480px){
-  .country-pills{gap:3px}
-  .pill{padding:3px 8px;font-size:.65rem}
-}
+@media(max-width:480px){.country-pills{gap:3px}.pill{padding:3px 8px;font-size:.65rem}}
 </style>
 </head>
 <body>
 
-<header class="header">
-  <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+<header class="header" id="header">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">&#9776;</button>
   <div class="brand">
     <div class="radar-icon"></div>
     <div><div class="brand-text">Energy Radar</div><div class="brand-sub">全球能源商机雷达</div></div>
   </div>
   <div class="header-stats">
-    <div class="stat-item"><div class="stat-num" id="stat-total">—</div><div class="stat-label">招标项目</div></div>
-    <div class="stat-item"><div class="stat-num" id="stat-countries">—</div><div class="stat-label">覆盖国家</div></div>
-    <div class="stat-item"><div class="stat-num" id="stat-regions">6</div><div class="stat-label">大洲</div></div>
+    <div class="stat-item"><div class="stat-num" id="statTotal">&mdash;</div><div class="stat-label">招标项目</div></div>
+    <div class="stat-item"><div class="stat-num" id="statCountries">&mdash;</div><div class="stat-label">覆盖国家</div></div>
+    <div class="stat-item"><div class="stat-num" id="statRegions">6</div><div class="stat-label">大洲</div></div>
   </div>
-  <div class="header-time" id="header-time"></div>
+  <div class="header-time" id="headerTime"></div>
 </header>
 
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <div class="app">
   <nav class="sidebar" id="sidebar"></nav>
   <main class="main" id="main"></main>
 </div>
 
-<a class="cta-float" href="mailto:shield.arthur.sgp@gmail.com?subject=Energy%20Radar%20定制雷达咨询&body=您好，我希望定制以下市场/行业的招标情报：%0A%0A行业：%0A地区：%0A具体需求：">
-  <span>📡</span><span>定制您的雷达</span>
-</a>
+<button class="cta-float" id="ctaBtn"><span>📡</span><span>定制您的雷达</span></button>
 
 <script>
-const REGIONS=[
-  {key:'europe',zh:'欧洲',flag:'🇪🇺',sub:'EUROPE'},
-  {key:'asia',zh:'亚洲',flag:'🌏',sub:'ASIA'},
-  {key:'north_america',zh:'北美洲',flag:'🌎',sub:'N. AMERICA'},
-  {key:'south_america',zh:'南美洲',flag:'🇧🇷',sub:'S. AMERICA'},
-  {key:'africa',zh:'非洲',flag:'🌍',sub:'AFRICA'},
-  {key:'oceania',zh:'大洋洲',flag:'🇦🇺',sub:'OCEANIA'},
-];
-const CF={
-  '德国':'🇩🇪','越南':'🇻🇳','美国':'🇺🇸','巴西':'🇧🇷','南非':'🇿🇦','澳大利亚':'🇦🇺',
-  '法国':'🇫🇷','英国':'🇬🇧','日本':'🇯🇵','韩国':'🇰🇷','印度':'🇮🇳','泰国':'🇹🇭',
-  '中国':'🇨🇳','加拿大':'🇨🇦','墨西哥':'🇲🇽','智利':'🇨🇱','阿根廷':'🇦🇷',
-  '肯尼亚':'🇰🇪','尼日利亚':'🇳🇬','埃及':'🇪🇬','新西兰':'🇳🇿','印度尼西亚':'🇮🇩',
-  '马来西亚':'🇲🇾','沙特阿拉伯':'🇸🇦','阿联酋':'🇦🇪','西班牙':'🇪🇸','意大利':'🇮🇹',
-  '菲律宾':'🇵🇭','巴基斯坦':'🇵🇰','奥地利':'🇦🇹','瑞士':'🇨🇭','波兰':'🇵🇱',
-  '捷克':'🇨🇿','罗马尼亚':'🇷🇴','希腊':'🇬🇷','保加利亚':'🇧🇬','葡萄牙':'🇵🇹',
-  '匈牙利':'🇭🇺','荷兰':'🇳🇱','哥伦比亚':'🇨🇴','秘鲁':'🇵🇪','多米尼加':'🇩🇴',
-  '危地马拉':'🇬🇹','洪都拉斯':'🇭🇳','摩洛哥':'🇲🇦','全德国':'🇩🇪',
-};
-const SM={'进行中':'active','已开标':'done','政策生效':'info','征求意见':'upcoming',
-  '已发布':'info','已定标':'done','已签约':'done','资格审查':'upcoming',
-  '评标中':'upcoming','已注册':'info','已批准':'info','建设中':'info',
-  '投产中':'done','规划中':'upcoming'};
+(function(){
+  /* === CONFIG === */
+  var REGIONS=[
+    {key:'europe',zh:'欧洲',flag:'🇪🇺',sub:'EUROPE'},
+    {key:'asia',zh:'亚洲',flag:'🌏',sub:'ASIA'},
+    {key:'north_america',zh:'北美洲',flag:'🌎',sub:'N. AMERICA'},
+    {key:'south_america',zh:'南美洲',flag:'🇧🇷',sub:'S. AMERICA'},
+    {key:'africa',zh:'非洲',flag:'🌍',sub:'AFRICA'},
+    {key:'oceania',zh:'大洋洲',flag:'🇦🇺',sub:'OCEANIA'}
+  ];
+  var CF={'德国':'🇩🇪','越南':'🇻🇳','美国':'🇺🇸','巴西':'🇧🇷','南非':'🇿🇦','澳大利亚':'🇦🇺','法国':'🇫🇷','英国':'🇬🇧','日本':'🇯🇵','韩国':'🇰🇷','印度':'🇮🇳','泰国':'🇹🇭','中国':'🇨🇳','加拿大':'🇨🇦','墨西哥':'🇲🇽','智利':'🇨🇱','阿根廷':'🇦🇷','肯尼亚':'🇰🇪','尼日利亚':'🇳🇬','埃及':'🇪🇬','新西兰':'🇳🇿','印度尼西亚':'🇮🇩','马来西亚':'🇲🇾','沙特阿拉伯':'🇸🇦','阿联酋':'🇦🇪','西班牙':'🇪🇸','意大利':'🇮🇹','菲律宾':'🇵🇭','巴基斯坦':'🇵🇰','奥地利':'🇦🇹','瑞士':'🇨🇭','波兰':'🇵🇱','捷克':'🇨🇿','罗马尼亚':'🇷🇴','希腊':'🇬🇷','保加利亚':'🇧🇬','葡萄牙':'🇵🇹','匈牙利':'🇭🇺','荷兰':'🇳🇱','哥伦比亚':'🇨🇴','秘鲁':'🇵🇪','多米尼加':'🇩🇴','危地马拉':'🇬🇹','洪都拉斯':'🇭🇳','摩洛哥':'🇲🇦','全德国':'🇩🇪'};
+  var SM={'进行中':'active','已开标':'done','政策生效':'info','征求意见':'upcoming','已发布':'info','已定标':'done','已签约':'done','资格审查':'upcoming','评标中':'upcoming','已注册':'info','已批准':'info','建设中':'info','投产中':'done','规划中':'upcoming'};
+  var D={},cR='europe',cC=null;
 
-let D={},cR='europe',cC=null;
+  /* === DOM REFS === */
+  var $sidebar=document.getElementById('sidebar');
+  var $main=document.getElementById('main');
+  var $overlay=document.getElementById('sidebarOverlay');
+  var $toggle=document.getElementById('mobileToggle');
+  var $cta=document.getElementById('ctaBtn');
 
-async function init(){
-  try{const r=await fetch('data.json?t='+Date.now());D=await r.json()}catch(e){D={}}
-  updStats();renderNav();renderMain();
-  document.getElementById('header-time').textContent=D.updated_at?'更新: '+D.updated_at:'';
-}
+  /* === CTA === */
+  $cta.addEventListener('click',function(){
+    var e='shield.arthur.sgp';var d='gmail.com';
+    var s='Energy%20Radar%20定制雷达咨询';
+    var b='您好，我希望定制以下市场/行业的招标情报：%0A%0A行业：%0A地区：%0A具体需求：';
+    window.location.href='mai'+'lto:'+e+'@'+d+'?subject='+s+'&body='+b;
+  });
 
-function updStats(){
-  let t=0;const cs=new Set();
-  REGIONS.forEach(r=>{const a=D[r.key]||[];t+=a.length;a.forEach(i=>cs.add(i.country))});
-  document.getElementById('stat-total').textContent=t;
-  document.getElementById('stat-countries').textContent=cs.size;
-}
+  /* === MOBILE TOGGLE === */
+  $toggle.addEventListener('click',function(){
+    $sidebar.classList.toggle('open');
+    $overlay.classList.toggle('show');
+  });
+  $overlay.addEventListener('click',function(){
+    $sidebar.classList.remove('open');
+    $overlay.classList.remove('show');
+  });
 
-function renderNav(){
-  const el=document.getElementById('sidebar');
-  let h='<div class="nav-section"><div class="nav-section-title">// Regions</div></div>';
-  REGIONS.forEach(r=>{
-    const items=D[r.key]||[];
-    const act=cR===r.key&&!cC;
-    h+=`<div class="nav-item nav-continent ${act?'active':''}" onclick="selR('${r.key}')">
-      <span class="nav-flag">${r.flag}</span><span class="nav-label">${r.zh}</span>
-      <span class="nav-count">${items.length}</span></div>`;
-    if(cR===r.key){
-      const cc={};items.forEach(i=>{cc[i.country]=(cc[i.country]||0)+1});
-      Object.entries(cc).sort((a,b)=>b[1]-a[1]).forEach(([c,n])=>{
-        h+=`<div class="nav-item nav-country ${cC===c?'active':''}" onclick="selC('${r.key}','${c}')">
-          <span class="nav-flag">${CF[c]||'🏳️'}</span><span class="nav-label">${c}</span>
-          <span class="nav-count">${n}</span></div>`;
+  /* === EVENT DELEGATION === */
+  $sidebar.addEventListener('click',function(e){
+    var el=e.target.closest('[data-action]');
+    if(!el)return;
+    var act=el.getAttribute('data-action');
+    var rk=el.getAttribute('data-region');
+    var ct=el.getAttribute('data-country');
+    if(act==='region'){cR=rk;cC=null;}
+    else if(act==='country'){cR=rk;cC=ct;}
+    render();closeMob();window.scrollTo(0,0);
+  });
+  $main.addEventListener('click',function(e){
+    var el=e.target.closest('[data-action]');
+    if(!el)return;
+    var act=el.getAttribute('data-action');
+    var rk=el.getAttribute('data-region');
+    var ct=el.getAttribute('data-country');
+    if(act==='region'){cR=rk;cC=null;}
+    else if(act==='country'){cR=rk;cC=ct;}
+    render();window.scrollTo(0,0);
+  });
+
+  function closeMob(){$sidebar.classList.remove('open');$overlay.classList.remove('show');}
+
+  /* === KEYBOARD === */
+  document.addEventListener('keydown',function(e){
+    var ks=REGIONS.map(function(r){return r.key});
+    var idx=ks.indexOf(cR);
+    if(e.key==='ArrowDown'&&idx<ks.length-1){cR=ks[idx+1];cC=null;render();e.preventDefault();}
+    if(e.key==='ArrowUp'&&idx>0){cR=ks[idx-1];cC=null;render();e.preventDefault();}
+    if(e.key==='Escape'&&cC){cC=null;render();e.preventDefault();}
+  });
+
+  /* === RENDER === */
+  function render(){renderNav();renderMain();updStats();}
+
+  function updStats(){
+    var t=0;var cs={};
+    REGIONS.forEach(function(r){var a=D[r.key]||[];t+=a.length;a.forEach(function(i){cs[i.country]=1});});
+    document.getElementById('statTotal').textContent=t;
+    document.getElementById('statCountries').textContent=Object.keys(cs).length;
+  }
+
+  function renderNav(){
+    var h='<div class="nav-section"><div class="nav-section-title">// Regions</div></div>';
+    REGIONS.forEach(function(r){
+      var items=D[r.key]||[];
+      var act=cR===r.key&&!cC;
+      h+='<div class="nav-item nav-continent'+(act?' active':'')+'" data-action="region" data-region="'+r.key+'">';
+      h+='<span class="nav-flag">'+r.flag+'</span><span class="nav-label">'+r.zh+'</span>';
+      h+='<span class="nav-count">'+items.length+'</span></div>';
+      if(cR===r.key){
+        var cc={};items.forEach(function(i){cc[i.country]=(cc[i.country]||0)+1});
+        var sorted=Object.keys(cc).sort(function(a,b){return cc[b]-cc[a]});
+        sorted.forEach(function(c){
+          var act2=cC===c;
+          h+='<div class="nav-item nav-country'+(act2?' active':'')+'" data-action="country" data-region="'+r.key+'" data-country="'+c+'">';
+          h+='<span class="nav-flag">'+(CF[c]||'🏳️')+'</span><span class="nav-label">'+c+'</span>';
+          h+='<span class="nav-count">'+cc[c]+'</span></div>';
+        });
+      }
+    });
+    h+='<div class="nav-divider"></div><div class="nav-section"><div class="nav-section-title">// Powered by</div>';
+    h+='<div style="padding:4px 12px;font-size:.68rem;color:var(--text-tertiary)">XpandExpo<br>';
+    h+='<a href="https://www.xpandexpo.com" target="_blank" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:.6rem">xpandexpo.com</a></div></div>';
+    $sidebar.innerHTML=h;
+  }
+
+  function renderMain(){
+    var r=null;
+    REGIONS.forEach(function(x){if(x.key===cR)r=x});
+    if(!r)return;
+    var items=D[cR]||[];
+    var fil=cC?items.filter(function(i){return i.country===cC}):items;
+    var cc={};items.forEach(function(i){cc[i.country]=(cc[i.country]||0)+1});
+
+    var pills='<div class="pill'+((!cC)?' active':'')+'" data-action="region" data-region="'+cR+'">';
+    pills+='<span class="pill-flag">'+r.flag+'</span>全部<span class="pill-count">'+items.length+'</span></div>';
+    var sorted=Object.keys(cc).sort(function(a,b){return cc[b]-cc[a]});
+    sorted.forEach(function(c){
+      pills+='<div class="pill'+((cC===c)?' active':'')+'" data-action="country" data-region="'+cR+'" data-country="'+c+'">';
+      pills+='<span class="pill-flag">'+(CF[c]||'🏳️')+'</span>'+c+'<span class="pill-count">'+cc[c]+'</span></div>';
+    });
+
+    var cards='';
+    if(!fil.length){cards='<div class="empty-state"><div class="icon">📡</div><p>该区域暂无招标数据</p></div>';}
+    else{
+      fil.forEach(function(i){
+        var sc=SM[i.status]||'active';
+        var cap=i.capacity_mw>0?'<span class="tender-capacity">'+i.capacity_mw.toLocaleString()+' MW</span>':'';
+        var src=i.source||'';var ss=src.length>18?src.substring(0,16)+'…':src;
+        cards+='<div class="tender-card">';
+        cards+='<div class="tender-flag">'+(CF[i.country]||'🏳️')+'</div>';
+        cards+='<div class="tender-body"><div class="tender-name">'+i.name+'</div>';
+        cards+='<div class="tender-meta"><span class="tender-status status-'+sc+'">'+i.status+'</span>';
+        cards+='<span class="tender-deadline">截止: '+(i.deadline||'—')+'</span>'+cap+'</div></div>';
+        cards+='<div class="tender-link">';
+        if(i.url){cards+='<a href="'+i.url+'" target="_blank" rel="noopener">'+ss+'</a>';}
+        cards+='</div></div>';
       });
     }
-  });
-  h+=`<div class="nav-divider"></div><div class="nav-section"><div class="nav-section-title">// Powered by</div>
-    <div style="padding:4px 12px;font-size:.68rem;color:var(--text-tertiary)">XpandExpo<br>
-    <a href="https://www.xpandexpo.com" target="_blank" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:.6rem">xpandexpo.com</a></div></div>`;
-  el.innerHTML=h;
-}
 
-function renderMain(){
-  const r=REGIONS.find(x=>x.key===cR);if(!r)return;
-  const items=D[cR]||[];
-  const fil=cC?items.filter(i=>i.country===cC):items;
-  const cc={};items.forEach(i=>{cc[i.country]=(cc[i.country]||0)+1});
+    var tt=cC||r.zh;var tf=cC?(CF[cC]||'🏳️'):r.flag;
+    $main.innerHTML='<div class="content-header"><div class="content-title"><span class="flag">'+tf+'</span>'
+      +'<h2>'+tt+'</h2><span class="content-count">'+r.sub+' · '+fil.length+' 条</span></div></div>'
+      +'<div class="country-pills">'+pills+'</div><div class="tender-list">'+cards+'</div>';
+  }
 
-  let pills=`<div class="pill ${!cC?'active':''}" onclick="selR('${cR}')">
-    <span class="pill-flag">${r.flag}</span>全部<span class="pill-count">${items.length}</span></div>`;
-  Object.entries(cc).sort((a,b)=>b[1]-a[1]).forEach(([c,n])=>{
-    pills+=`<div class="pill ${cC===c?'active':''}" onclick="selC('${cR}','${c}')">
-      <span class="pill-flag">${CF[c]||'🏳️'}</span>${c}<span class="pill-count">${n}</span></div>`;
-  });
+  /* === INIT === */
+  function init(){
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','data.json?t='+Date.now(),true);
+    xhr.onload=function(){
+      if(xhr.status===200){try{D=JSON.parse(xhr.responseText)}catch(e){D={}}}
+      document.getElementById('headerTime').textContent=D.updated_at?'更新: '+D.updated_at:'';
+      render();
+    };
+    xhr.onerror=function(){D={};render();};
+    xhr.send();
+  }
 
-  let cards='';
-  if(!fil.length){cards='<div class="empty-state"><div class="icon">📡</div><p>该区域暂无招标数据</p></div>'}
-  else fil.forEach(i=>{
-    const sc=SM[i.status]||'active';
-    const cap=i.capacity_mw>0?`<span class="tender-capacity">${i.capacity_mw.toLocaleString()} MW</span>`:'';
-    const src=i.source||'';const ss=src.length>18?src.substring(0,16)+'…':src;
-    cards+=`<div class="tender-card">
-      <div class="tender-flag">${CF[i.country]||'🏳️'}</div>
-      <div class="tender-body"><div class="tender-name">${i.name}</div>
-        <div class="tender-meta"><span class="tender-status status-${sc}">${i.status}</span>
-        <span class="tender-deadline">截止: ${i.deadline||'—'}</span>${cap}</div></div>
-      <div class="tender-link">${i.url?`<a href="${i.url}" target="_blank" rel="noopener">${ss}</a>`:''}</div></div>`;
-  });
-
-  const tt=cC||r.zh;const tf=cC?(CF[cC]||'🏳️'):r.flag;
-  document.getElementById('main').innerHTML=`
-    <div class="content-header"><div class="content-title"><span class="flag">${tf}</span>
-      <h2>${tt}</h2><span class="content-count">${r.sub} · ${fil.length} 条</span></div></div>
-    <div class="country-pills">${pills}</div><div class="tender-list">${cards}</div>`;
-}
-
-function selR(k){cR=k;cC=null;renderNav();renderMain();closeMob();scrollTo(0,0)}
-function selC(rk,c){cR=rk;cC=c;renderNav();renderMain();closeMob();scrollTo(0,0)}
-function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebarOverlay').classList.toggle('show')}
-function closeMob(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('show')}
-
-document.addEventListener('keydown',e=>{
-  const ks=REGIONS.map(r=>r.key),idx=ks.indexOf(cR);
-  if(e.key==='ArrowDown'&&idx<ks.length-1){se
+  init();
+})();
+</script>
+</body>
+</html>
