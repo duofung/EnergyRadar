@@ -1,134 +1,133 @@
 {
-  "updated_at": "2026-04-12 10:00",
   "europe": [
     {
       "country": "德国",
       "location": "全德国",
-      "name": "BNetzA 屋顶光伏招标 第二轮（Segment 2 ~367MW）",
-      "status": "进行中",
+      "name": "BNetzA 屋顶光伏招标 第二轮",
+      "capacity_mw": 367,
       "deadline": "2026-06-01",
-      "capacity_mw": 367,
+      "status": "进行中",
       "source": "Bundesnetzagentur",
       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"
     },
     {
       "country": "德国",
       "location": "全德国",
-      "name": "BNetzA 地面光伏招标 第二轮（Segment 1 ~3,300MW）",
-      "status": "进行中",
+      "name": "BNetzA 地面光伏招标 第二轮",
+      "capacity_mw": 3300,
       "deadline": "2026-07-01",
-      "capacity_mw": 3300,
+      "status": "进行中",
       "source": "Bundesnetzagentur",
       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"
     },
     {
       "country": "德国",
       "location": "全德国",
-      "name": "BNetzA 屋顶光伏招标 第三轮（Segment 2 ~367MW）",
-      "status": "进行中",
-      "deadline": "2026-10-01",
+      "name": "BNetzA 屋顶光伏招标 第三轮",
       "capacity_mw": 367,
+      "deadline": "2026-10-01",
+      "status": "进行中",
       "source": "Bundesnetzagentur",
       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"
     },
     {
       "country": "德国",
       "location": "全德国",
-      "name": "BNetzA 地面光伏招标 第三轮（Segment 1 ~3,300MW）",
-      "status": "进行中",
-      "deadline": "2026-12-01",
+      "name": "BNetzA 地面光伏招标 第三轮",
       "capacity_mw": 3300,
+      "deadline": "2026-12-01",
+      "status": "进行中",
       "source": "Bundesnetzagentur",
       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen1/start.html"
     },
     {
-      "country": "奥地利",
-      "location": "奥地利",
-      "name": "奥地利 OeMAG 光伏补贴拍卖（2026年度）",
+      "country": "西班牙",
+      "location": "西班牙",
+      "name": "IDAE 可再生能源拍卖 — 光伏+储能（2026轮次）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=09330000&search-scope=ACTIVE"
+      "source": "TED 西班牙太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=09330000&search-scope=ACTIVE"
     },
     {
-      "country": "奥地利",
-      "location": "奥地利",
-      "name": "奥地利联邦采购局 — 公共建筑光伏安装",
+      "country": "西班牙",
+      "location": "西班牙",
+      "name": "REE 电网储能系统采购",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=45261215&search-scope=ACTIVE"
+      "source": "TED 西班牙储能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=31440000&search-scope=ACTIVE"
     },
     {
-      "country": "瑞士",
-      "location": "瑞士",
-      "name": "瑞士 Pronovo 光伏招标 — 大型地面电站补贴",
+      "country": "法国",
+      "location": "法国",
+      "name": "CRE PPE2 光伏招标 第九轮（地面电站 + 屋顶）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
+      "source": "TED 法国太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=09330000&search-scope=ACTIVE"
     },
     {
-      "country": "瑞士",
-      "location": "瑞士",
-      "name": "瑞士高山太阳能项目（Alpine Solar）— 联邦加速审批",
+      "country": "法国",
+      "location": "法国",
+      "name": "法国公共建筑光伏安装+储能采购",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
+      "source": "TED 法国光伏工程",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=45261215&search-scope=ACTIVE"
     },
     {
       "country": "意大利",
       "location": "意大利",
-      "name": "意大利 GSE 光伏招标 — FER2 可再生能源拍卖",
+      "name": "GSE FER2 可再生能源拍卖（光伏专项）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 意大利太阳能",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ITA&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "意大利",
       "location": "意大利",
-      "name": "意大利 Terna 电网储能采购（BESS 快速储备）",
+      "name": "Terna 电网储能快速储备采购（BESS）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 意大利储能",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ITA&cpv=31440000&search-scope=ACTIVE"
     },
     {
-      "country": "西班牙",
-      "location": "西班牙",
-      "name": "西班牙 IDAE 可再生能源拍卖（太阳能+储能）",
+      "country": "荷兰",
+      "location": "荷兰",
+      "name": "SDE++ 可再生能源补贴（光伏+储能 2026轮次）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=31440000&search-scope=ACTIVE"
+      "source": "TED 荷兰太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=09330000&search-scope=ACTIVE"
     },
     {
-      "country": "西班牙",
-      "location": "西班牙",
-      "name": "西班牙 REE 电网储能系统采购",
+      "country": "荷兰",
+      "location": "荷兰",
+      "name": "TenneT 电网储能系统采购",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ESP&cpv=31440000&search-scope=ACTIVE"
+      "source": "TED 荷兰储能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=31440000&search-scope=ACTIVE"
     },
     {
       "country": "波兰",
       "location": "波兰",
-      "name": "波兰 URE 可再生能源拍卖 — 光伏专项（2026）",
+      "name": "URE 可再生能源拍卖 — 光伏专项（2026）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 波兰太阳能",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=POL&cpv=09330000&search-scope=ACTIVE"
     },
     {
@@ -138,17 +137,87 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=POL&cpv=31440000&search-scope=ACTIVE"
+      "source": "TED 波兰光伏工程",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=POL&cpv=45261215&search-scope=ACTIVE"
+    },
+    {
+      "country": "罗马尼亚",
+      "location": "罗马尼亚",
+      "name": "ANRE CfD 可再生能源拍卖（光伏+储能）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 罗马尼亚太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=09330000&search-scope=ACTIVE"
+    },
+    {
+      "country": "罗马尼亚",
+      "location": "罗马尼亚",
+      "name": "Transelectrica 电网储能系统采购",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 罗马尼亚储能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=31440000&search-scope=ACTIVE"
+    },
+    {
+      "country": "奥地利",
+      "location": "奥地利",
+      "name": "OeMAG 光伏补贴拍卖（2026年度）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 奥地利太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=09330000&search-scope=ACTIVE"
+    },
+    {
+      "country": "奥地利",
+      "location": "奥地利",
+      "name": "奥地利联邦采购局 — 公共建筑光伏安装",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 奥地利光伏工程",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=AUT&cpv=45261215&search-scope=ACTIVE"
+    },
+    {
+      "country": "希腊",
+      "location": "希腊",
+      "name": "RAE 光伏拍卖（2025安装1.9GW，持续采购中）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 希腊太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=GRC&cpv=09330000&search-scope=ACTIVE"
+    },
+    {
+      "country": "保加利亚",
+      "location": "保加利亚",
+      "name": "光伏招标（国家复苏基金推动，首次进EU前十）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 保加利亚太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=BGR&cpv=09330000&search-scope=ACTIVE"
+    },
+    {
+      "country": "葡萄牙",
+      "location": "葡萄牙",
+      "name": "DGEG 光伏拍卖（2026-2030高增长市场）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "TED 葡萄牙太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=PRT&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "捷克",
       "location": "捷克",
-      "name": "捷克 ERÚ 可再生能源招标 — 光伏支持计划",
+      "name": "ERÚ 可再生能源招标 — 光伏支持计划",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 捷克太阳能",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CZE&cpv=09330000&search-scope=ACTIVE"
     },
     {
@@ -158,220 +227,140 @@
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 捷克光伏工程",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CZE&cpv=45261215&search-scope=ACTIVE"
     },
     {
-      "country": "罗马尼亚",
-      "location": "罗马尼亚",
-      "name": "罗马尼亚 ANRE 可再生能源拍卖（CfD 机制）",
+      "country": "瑞士",
+      "location": "瑞士",
+      "name": "Pronovo 光伏招标 — 大型地面电站补贴",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=09330000&search-scope=ACTIVE"
+      "source": "TED 瑞士太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
     },
     {
-      "country": "罗马尼亚",
-      "location": "罗马尼亚",
-      "name": "罗马尼亚 Transelectrica 储能系统采购",
+      "country": "瑞士",
+      "location": "瑞士",
+      "name": "高山太阳能项目（Alpine Solar）— 联邦加速审批",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=ROU&cpv=31440000&search-scope=ACTIVE"
-    },
-    {
-      "country": "法国",
-      "location": "法国",
-      "name": "法国 CRE 光伏招标（PPE2 第九轮 地面电站）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=09330000&search-scope=ACTIVE"
-    },
-    {
-      "country": "法国",
-      "location": "法国",
-      "name": "法国 EDF 商业屋顶光伏+储能采购",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=FRA&cpv=31440000&search-scope=ACTIVE"
-    },
-    {
-      "country": "荷兰",
-      "location": "荷兰",
-      "name": "荷兰 SDE++ 可再生能源补贴（光伏+储能 2026轮）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=31440000&search-scope=ACTIVE"
-    },
-    {
-      "country": "荷兰",
-      "location": "荷兰",
-      "name": "荷兰 TenneT 电网储能系统采购",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=NLD&cpv=31440000&search-scope=ACTIVE"
-    },
-    {
-      "country": "希腊",
-      "location": "希腊",
-      "name": "希腊 RAE 光伏拍卖（2025安装1.9GW，持续采购）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=GRC&cpv=45261215&search-scope=ACTIVE"
-    },
-    {
-      "country": "保加利亚",
-      "location": "保加利亚",
-      "name": "保加利亚光伏招标（国家复苏基金推动，首次进前十）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=BGR&cpv=09330000&search-scope=ACTIVE"
-    },
-    {
-      "country": "葡萄牙",
-      "location": "葡萄牙",
-      "name": "葡萄牙 DGEG 光伏拍卖（2026-2030高增长市场）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "TED Europa",
-      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=PRT&cpv=09330000&search-scope=ACTIVE"
+      "source": "TED 瑞士光伏",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=CHE&cpv=09330000&search-scope=ACTIVE"
     },
     {
       "country": "匈牙利",
       "location": "匈牙利",
-      "name": "匈牙利 MEKH 可再生能源招标（中东欧重要市场）",
+      "name": "MEKH 可再生能源招标（中东欧重要市场）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "TED Europa",
+      "source": "TED 匈牙利太阳能",
       "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=HUN&cpv=09330000&search-scope=ACTIVE"
+    },
+    {
+      "country": "德国",
+      "location": "德国",
+      "name": "德国公共建筑光伏+储能改造采购（TED 活跃招标）",
+      "capacity_mw": 0,
+      "deadline": "持续更新",
+      "status": "进行中",
+      "source": "TED 德国太阳能",
+      "url": "https://ted.europa.eu/en/search/result?notice-type=cn-standard,cn-social&buyer-country=DEU&cpv=09330000&search-scope=ACTIVE"
     }
   ],
   "asia": [
     {
+      "country": "菲律宾",
+      "location": "吕宋/米沙鄢/棉兰老",
+      "name": "GEA-4 太阳能拍卖 — 6GW光伏+1.19GW光伏储能 IRESS（已开标）",
+      "capacity_mw": 7190,
+      "deadline": "2025-11-10",
+      "status": "已开标",
+      "source": "DOE Philippines",
+      "url": "https://www.pv-tech.org/philippines-awards-over-6gw-solar-capacity-over-1gw-solar-plus-storage-latest-auction/"
+    },
+    {
+      "country": "越南",
+      "location": "全越南",
+      "name": "EVN 2026年度 PVout 系数公告（屋顶光伏发电量计算基准）",
+      "capacity_mw": 0,
+      "deadline": "2026-01-20",
+      "status": "已发布",
+      "source": "EVN 越南",
+      "url": "https://vas-co.com/en/pv-out-2026-en/"
+    },
+    {
+      "country": "印度",
+      "location": "奥里萨邦",
+      "name": "SECI 125MW/500MWh 奥里萨邦独立储能系统（VGF）",
+      "capacity_mw": 125,
+      "deadline": "2026-03-01",
+      "status": "已开标",
+      "source": "SECI India",
+      "url": "https://www.seci.co.in/tenders"
+    },
+    {
       "country": "印度",
       "location": "全印度",
       "name": "SECI 80MW 短期固定电力开放准入采购",
-      "status": "进行中",
-      "deadline": "2026-04-20",
       "capacity_mw": 80,
-      "source": "SECI 招标列表",
-      "url": "https://www.seci.co.in/view/publish/tender?tender=all"
+      "deadline": "2026-04-20",
+      "status": "进行中",
+      "source": "SECI India",
+      "url": "https://www.seci.co.in/tenders"
     },
     {
       "country": "印度",
       "location": "哈里亚纳邦",
-      "name": "NHPC 30.93MW 政府屋顶光伏项目",
-      "status": "进行中",
-      "deadline": "2026-04-25",
+      "name": "NHPC 30.93MW 哈里亚纳邦政府屋顶光伏项目",
       "capacity_mw": 31,
-      "source": "NHPC 招标",
-      "url": "https://nhpc.nic.in/tenders"
+      "deadline": "2026-04-25",
+      "status": "进行中",
+      "source": "SECI India",
+      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
     },
     {
       "country": "印度",
       "location": "贾坎德邦",
       "name": "CMPDI 25MW 丹巴德太阳能电站项目",
-      "status": "进行中",
-      "deadline": "2026-04-30",
       "capacity_mw": 25,
-      "source": "CMPDI 招标",
-      "url": "https://www.cmpdi.co.in/en/web/cmpdi/tenders"
+      "deadline": "2026-04-30",
+      "status": "进行中",
+      "source": "SECI India",
+      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
     },
     {
       "country": "印度",
-      "location": "全印度",
-      "name": "SECI FDRE VII — 1200MW光伏+4800MWh储能（已开标）",
-      "status": "已开标",
-      "deadline": "2026-02-15",
-      "capacity_mw": 1200,
-      "source": "SECI 招标列表",
-      "url": "https://www.seci.co.in/view/publish/tender?tender=all"
-    },
-    {
-      "country": "印度",
-      "location": "奥里萨邦",
-      "name": "SECI 125MW/500MWh 独立储能系统 VGF（已开标）",
-      "status": "已开标",
-      "deadline": "2026-03-01",
-      "capacity_mw": 125,
-      "source": "SECI 招标列表",
-      "url": "https://www.seci.co.in/view/publish/tender?tender=all"
-    },
-    {
-      "country": "越南",
-      "location": "全越南",
-      "name": "Decree 57/58 — DPPA直购电机制（可再生能源→大用户）",
-      "status": "政策生效",
-      "deadline": "长期有效",
-      "capacity_mw": 0,
-      "source": "MOIT 越南",
-      "url": "https://www.vietnam-briefing.com/news/vietnam-renewable-energy-decree-57.html/"
+      "location": "旁遮普邦",
+      "name": "北方铁路 2.15MW 旁遮普邦车站光伏项目",
+      "capacity_mw": 2,
+      "deadline": "2026-05-10",
+      "status": "进行中",
+      "source": "SECI India",
+      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
     },
     {
       "country": "越南",
       "location": "全越南",
       "name": "屋顶光伏余电上网草案 — 上限拟提至50%（征求意见中）",
-      "status": "征求意见",
-      "deadline": "2026年内",
       "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "征求意见",
       "source": "MOIT 越南",
       "url": "https://b-company.jp/vietnam-rooftop-solar-draft-rules-2026-selling-up-to-50-surplus-power-who-benefits-and-what-to-watch-next"
     },
     {
-      "country": "越南",
-      "location": "全越南",
-      "name": "EVN 2026年度 PVout 系数公告（屋顶光伏计算基准）",
-      "status": "已发布",
-      "deadline": "2026-01-20",
-      "capacity_mw": 0,
-      "source": "EVN 越南",
-      "url": "https://vas-co.com/en/pv-out-2026-en/"
-    },
-    {
-      "country": "菲律宾",
-      "location": "吕宋/米沙鄢/棉兰老",
-      "name": "GEA-4 太阳能拍卖 — 6GW光伏 + 1.19GW光储 IRESS（已开标）",
-      "capacity_mw": 7190,
-      "deadline": "2025-11-10",
-      "status": "已开标",
-      "source": "DOE Philippines GEA",
-      "url": "https://www.doe.gov.ph/green-energy-auction-program?q=green-energy-auction-program"
-    },
-    {
-      "country": "菲律宾",
-      "location": "吕宋",
-      "name": "Terra Solar 4,500MWh 储能（世界最大光储项目之一）",
-      "capacity_mw": 0,
-      "deadline": "建设中",
-      "status": "已批准",
-      "source": "DOE Philippines RE",
-      "url": "https://www.doe.gov.ph/renewable-energy-projects"
-    },
-    {
       "country": "沙特阿拉伯",
       "location": "多省",
-      "name": "NREP 第七轮 — 3.1GW光伏 + 2.2GW风电（资格审查中）",
+      "name": "NREP 第七轮 — 3.1GW 太阳能 + 2.2GW 风电（资格审查中）",
       "capacity_mw": 5300,
       "deadline": "2026年内",
       "status": "资格审查",
       "source": "SPPC Saudi",
-      "url": "https://www.sppc.com.sa/EN/Pages/NREPRoundSeven.aspx"
+      "url": "https://www.pv-magazine.com/2026/01/07/saudi-arabia-reveals-qualified-bidders-for-3-1-gw-solar-auction/"
     },
     {
       "country": "沙特阿拉伯",
@@ -381,47 +370,67 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "SPPC Saudi",
-      "url": "https://www.sppc.com.sa/EN/Pages/NREPRoundSix.aspx"
+      "url": "https://www.pv-tech.org/saudi-arabia-round-6-tender-pv/"
     },
     {
       "country": "阿联酋",
       "location": "阿布扎比",
-      "name": "EWEC 1.5GW Zarraf 太阳能项目（RFP已发，16家竞标）",
+      "name": "EWEC 太阳能+储能采购（Al Dhafra 后续轮次）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
       "source": "EWEC UAE",
-      "url": "https://ewec.ae/en/generation/solar-energy"
+      "url": "https://www.ewec.ae/"
     },
     {
       "country": "日本",
       "location": "全国",
-      "name": "METI FIP 第27轮拍卖 — 79MW已定标（2026最后一年FIP）",
+      "name": "METI 光伏 FIP 拍卖（2026年度 大型地面电站）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
-      "source": "OCCTO 拍卖结果",
-      "url": "https://www.fit-portal.go.jp/servlet/servlet.FileDownload?retURL=%2Fapex%2FPurchasingPriceSearch&file=00P2t000003FfBtEAK"
+      "source": "METI Japan",
+      "url": "https://www.enecho.meti.go.jp/"
+    },
+    {
+      "country": "日本",
+      "location": "全国",
+      "name": "日本海上风电+陆上光伏组合拍卖（2026轮次）",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "METI Japan",
+      "url": "https://www.enecho.meti.go.jp/"
     },
     {
       "country": "韩国",
       "location": "全国",
-      "name": "MOTIE 可再生能源招标（光伏+储能，2030目标20%）",
+      "name": "MOTIE 可再生能源招标（光伏+储能，2030目标20%可再生）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
       "source": "MOTIE Korea",
-      "url": "https://www.motie.go.kr/motie/ms/nt/announce/bbs/bbsList.do"
+      "url": "https://www.motie.go.kr/"
     },
     {
       "country": "泰国",
       "location": "全国",
-      "name": "EGAT 太阳能采购 — 屋顶 + 浮式光伏计划",
+      "name": "EGAT 太阳能采购 — 屋顶光伏 + 浮式光伏计划",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
       "source": "EGAT Thailand",
-      "url": "https://www.egat.co.th/home/en/procurement/"
+      "url": "https://www.egat.co.th/"
+    },
+    {
+      "country": "泰国",
+      "location": "全国",
+      "name": "泰国首座锂电池超级工厂（东南亚首个）— 投产中",
+      "capacity_mw": 0,
+      "deadline": "2026年内",
+      "status": "投产中",
+      "source": "行业动态",
+      "url": "https://energytracker.asia/renewable-energy-trends-in-asia/"
     },
     {
       "country": "马来西亚",
@@ -431,97 +440,67 @@
       "deadline": "2026年内",
       "status": "进行中",
       "source": "SEDA Malaysia",
-      "url": "https://www.st.gov.my/en/web/industry/details/4/3"
+      "url": "https://www.seda.gov.my/"
+    },
+    {
+      "country": "马来西亚",
+      "location": "全国",
+      "name": "东南亚最大浮式光伏项目（100MW 规划中）",
+      "capacity_mw": 100,
+      "deadline": "2026年内",
+      "status": "规划中",
+      "source": "行业动态",
+      "url": "https://www.seda.gov.my/"
     },
     {
       "country": "印度尼西亚",
       "location": "全国",
-      "name": "PLN 光伏+储能采购（RUPTL 2026目标 6.5GW）",
+      "name": "PLN 可再生能源采购 — 光伏+储能（RUPTL 2026目标 6.5GW）",
       "capacity_mw": 6500,
       "deadline": "2026年内",
       "status": "进行中",
       "source": "PLN Indonesia",
-      "url": "https://web.pln.co.id/statics/uploads/2021/10/RUPTL-2021-2030.pdf"
+      "url": "https://www.pln.co.id/"
+    },
+    {
+      "country": "沙特阿拉伯",
+      "location": "东部/哈伊勒",
+      "name": "NREP 第五轮 — 3.7GW 太阳能（最低$0.0129/kWh，已签PPA）",
+      "capacity_mw": 3700,
+      "deadline": "已签约",
+      "status": "已签约",
+      "source": "SPPC Saudi",
+      "url": "https://www.pv-magazine.com/2024/10/23/saudi-arabias-3-7-gw-solar-tender-attracts-lowest-bid-of-0-0129-kwh/"
+    },
+    {
+      "country": "菲律宾",
+      "location": "吕宋",
+      "name": "Terra Solar 4,500MWh 储能项目（世界最大光储项目之一）",
+      "capacity_mw": 0,
+      "deadline": "建设中",
+      "status": "已批准",
+      "source": "DOE Philippines",
+      "url": "https://www.ess-news.com/2025/03/14/philippines-energy-storage-auction-integrated-solar-storage-gea-4/"
     },
     {
       "country": "巴基斯坦",
       "location": "全国",
-      "name": "巴基斯坦太阳能扩张（2024全球第四 17GW安装）",
+      "name": "巴基斯坦太阳能部署（2024年全球第四 17GW安装）",
       "capacity_mw": 17000,
       "deadline": "持续",
       "status": "进行中",
-      "source": "AEDB Pakistan",
-      "url": "https://www.aedb.org/ae-technologies/solar-power/solar-current-status"
+      "source": "行业动态",
+      "url": "https://iea-pvps.org/"
     },
     {
-      "country": "中国",
-      "location": "全国",
-      "name": "中国2025年新增光伏315GW（全球之最，累计1.2TW）",
-      "capacity_mw": 315000,
-      "deadline": "2025年",
-      "status": "已发布",
-      "source": "国家能源局",
-      "url": "https://www.nea.gov.cn/2026-01/28/c_1310799563.htm"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "PowerChina 31GW 光伏组件集采（2026项目，含TOPCon/HJT/BC）",
-      "capacity_mw": 31000,
-      "deadline": "2025-12-24",
-      "status": "已开标",
-      "source": "电建集采公告",
-      "url": "https://ec.powerchina.cn/#/noticeList?type=procurement&category=equipment"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "PowerChina 16GWh 储能集采（史上最大储能招标，均价$66/kWh）",
+      "country": "越南",
+      "location": "全越南",
+      "name": "Decree 57/58 — DPPA直购电机制（可再生能源→大用户）",
       "capacity_mw": 0,
-      "deadline": "2025-12-04",
-      "status": "已开标",
-      "source": "电建集采公告",
-      "url": "https://ec.powerchina.cn/#/noticeList?type=procurement&category=equipment"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "华电集团 20GW 光伏组件框架采购（2025-2026）",
-      "capacity_mw": 20000,
-      "deadline": "2026-06-30",
-      "status": "进行中",
-      "source": "华电采购公告",
-      "url": "https://www.chdtp.com/webbuilder/frontAppAction.do?cmd=goToNewPage&channelId=8a0b87f64c85fa15014c86f8b93d0002"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "中能建 25GWh 储能集采（创纪录，4h系统$51/kWh新低）",
-      "capacity_mw": 0,
-      "deadline": "2025-06",
-      "status": "已开标",
-      "source": "中能建招标公告",
-      "url": "https://ec.ceec.net.cn/home/notice-list?type=tender"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "NEA 新能源储能目标180GW（2027年前翻倍，投资2500亿元）",
-      "capacity_mw": 180000,
-      "deadline": "2027",
-      "status": "规划中",
-      "source": "国家能源局公告",
-      "url": "https://www.nea.gov.cn/2025-09/12/c_1310783456.htm"
-    },
-    {
-      "country": "中国",
-      "location": "全国",
-      "name": "2026年1-2月新增光伏32.48GW（CfD拍卖机制生效后调整期）",
-      "capacity_mw": 32480,
-      "deadline": "2026-02",
-      "status": "已发布",
-      "source": "国家能源局统计",
-      "url": "https://www.nea.gov.cn/2026-03/20/c_1310806789.htm"
+      "deadline": "长期有效",
+      "status": "政策生效",
+      "source": "MOIT 越南",
+      "url": "https://www.vietnam-briefing.com/news/vietnam-renewable-energy-decree-57.html/"
     }
   ],
   "north_america": [
@@ -529,238 +508,138 @@
       "country": "美国",
       "location": "联邦",
       "name": "DOE 光伏+储能采购 — 联邦建筑屋顶太阳能计划",
-      "status": "进行中",
-      "deadline": "2026-05-15",
       "capacity_mw": 0,
-      "source": "SAM.gov",
+      "deadline": "2026-05-15",
+      "status": "进行中",
+      "source": "SAM.gov / 州政府",
       "url": "https://sam.gov/opportunities?keywords=solar%20energy"
     },
     {
       "country": "美国",
       "location": "联邦",
-      "name": "DOD 军事基地太阳能微电网项目（多基地）",
-      "status": "进行中",
-      "deadline": "2026-06-30",
-      "capacity_mw": 0,
-      "source": "SAM.gov",
-      "url": "https://sam.gov/opportunities?keywords=solar%20microgrid"
-    },
-    {
-      "country": "美国",
-      "location": "联邦",
       "name": "GSA 联邦建筑储能系统安装采购",
-      "status": "进行中",
-      "deadline": "2026-05-20",
       "capacity_mw": 0,
-      "source": "SAM.gov",
+      "deadline": "2026-05-20",
+      "status": "进行中",
+      "source": "SAM.gov / 州政府",
       "url": "https://sam.gov/opportunities?keywords=battery%20storage"
     },
     {
       "country": "美国",
-      "location": "加州",
-      "name": "加州 CPUC 长时储能采购计划（2026年度 ~2GW）",
+      "location": "联邦",
+      "name": "DOD 军事基地太阳能微电网项目（多基地）",
+      "capacity_mw": 0,
+      "deadline": "2026-06-30",
       "status": "进行中",
-      "deadline": "持续采购",
-      "capacity_mw": 2000,
-      "source": "CPUC California",
-      "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-power-procurement"
+      "source": "SAM.gov / 州政府",
+      "url": "https://sam.gov/opportunities?keywords=solar%20microgrid"
     },
     {
       "country": "美国",
       "location": "德州",
-      "name": "德州 ERCOT 太阳能+储能互联队列（2026 Q2）",
-      "status": "进行中",
+      "name": "德州 ERCOT 太阳能+储能互联队列（2026 Q2批次）",
+      "capacity_mw": 0,
       "deadline": "2026-06-30",
-      "capacity_mw": 0,
-      "source": "ERCOT Texas",
-      "url": "https://www.ercot.com/gridinfo/resource"
-    },
-    {
-      "country": "美国",
-      "location": "佛州",
-      "name": "佛州 FPL SolarTogether 社区太阳能扩展（1,788MW）",
       "status": "进行中",
-      "deadline": "2026年内",
-      "capacity_mw": 1788,
-      "source": "FPL Florida",
-      "url": "https://www.fpl.com/energy/solar/solar-together.html"
-    },
-    {
-      "country": "美国",
-      "location": "纽约",
-      "name": "纽约 NYSERDA 大型可再生能源招标（Tier 4）",
-      "status": "进行中",
-      "deadline": "2026-09-30",
-      "capacity_mw": 0,
-      "source": "NYSERDA",
-      "url": "https://www.nyserda.ny.gov/All-Programs/Large-Scale-Renewables"
-    },
-    {
-      "country": "美国",
-      "location": "亚利桑那",
-      "name": "亚利桑那 APS 太阳能+储能采购（2026-2028）",
-      "status": "进行中",
-      "deadline": "2026-08-15",
-      "capacity_mw": 0,
-      "source": "APS Arizona",
-      "url": "https://sam.gov/opportunities?keywords=solar+energy+Arizona"
+      "source": "SAM.gov / 州政府",
+      "url": "https://www.ercot.com/gridinfo/generation"
     },
     {
       "country": "加拿大",
       "location": "安大略省",
       "name": "IESO 长时储能采购计划（Long-Term RFP）",
-      "status": "进行中",
-      "deadline": "2026-06-30",
       "capacity_mw": 0,
+      "deadline": "2026-06-30",
       "source": "IESO Ontario",
-      "url": "https://www.ieso.ca/en/Sector-Participants/Resource-Acquisition/Long-Term-RFP"
+      "url": "https://www.ieso.ca/en/Sector-Participants/Resource-Acquisition/Long-Term-RFP",
+      "status": "进行中"
+    },
+    {
+      "country": "美国",
+      "location": "亚利桑那",
+      "name": "亚利桑那 APS 公用事业太阳能+储能采购（2026-2028）",
+      "capacity_mw": 0,
+      "deadline": "2026-08-15",
+      "status": "进行中",
+      "source": "SAM.gov / 州政府",
+      "url": "https://www.aps.com/"
+    },
+    {
+      "country": "美国",
+      "location": "纽约",
+      "name": "纽约州 NYSERDA 大型可再生能源招标（Tier 4）",
+      "capacity_mw": 0,
+      "deadline": "2026-09-30",
+      "status": "进行中",
+      "source": "SAM.gov / 州政府",
+      "url": "https://www.nyserda.ny.gov/All-Programs/Large-Scale-Renewables"
+    },
+    {
+      "country": "美国",
+      "location": "佛州",
+      "name": "佛州 FPL SolarTogether 社区太阳能扩展计划",
+      "capacity_mw": 1788,
+      "deadline": "2026年内",
+      "status": "进行中",
+      "source": "SAM.gov / 州政府",
+      "url": "https://www.fpl.com/energy/solar/solar-together.html"
     },
     {
       "country": "加拿大",
       "location": "阿尔伯塔省",
       "name": "AESO 可再生能源竞标（REP Round 4）",
-      "status": "进行中",
-      "deadline": "2026年内",
       "capacity_mw": 0,
+      "deadline": "2026年内",
       "source": "AESO Alberta",
-      "url": "https://www.aeso.ca/market/renewable-electricity-program/"
+      "url": "https://www.aeso.ca/",
+      "status": "进行中"
     },
     {
       "country": "加拿大",
       "location": "联邦",
       "name": "加拿大联邦建筑绿色能源改造采购",
-      "status": "进行中",
-      "deadline": "2026年内",
       "capacity_mw": 0,
+      "deadline": "2026年内",
       "source": "CanadaBuys",
-      "url": "https://canadabuys.canada.ca/en/tender-opportunities?search=solar+energy"
+      "url": "https://canadabuys.canada.ca/en/tender-opportunities?search=solar+energy",
+      "status": "进行中"
     },
     {
       "country": "美国",
-      "location": "加利福尼亚",
-      "name": "加州 CEC 清洁能源研发资助（GFO-25-306，截止6/9）",
-      "capacity_mw": 0,
-      "deadline": "2026-06-09",
+      "location": "加州",
+      "name": "加州 CPUC 长时储能采购计划（2026年度）",
+      "capacity_mw": 2000,
+      "deadline": "持续采购",
       "status": "进行中",
-      "source": "CEC California",
-      "url": "https://www.energy.ca.gov/funding-opportunities/solicitations"
-    },
-    {
-      "country": "美国",
-      "location": "加利福尼亚",
-      "name": "Clean Power Alliance 2026清洁能源+储能+调度热能采购",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "CPA 采购公告",
-      "url": "https://cleanpoweralliance.org/contracting-opportunities/"
-    },
-    {
-      "country": "美国",
-      "location": "加利福尼亚",
-      "name": "CC Power 联合CCA — 200MW固定清洁资源采购（含BESS）",
-      "capacity_mw": 200,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "CCP 采购公告",
-      "url": "https://cacommunitypower.org/solicitations/"
-    },
-    {
-      "country": "美国",
-      "location": "伊利诺伊",
-      "name": "伊利诺伊州 Clean Grid Act — 公用事业3GW储能目标(2030)",
-      "capacity_mw": 3000,
-      "deadline": "2030",
-      "status": "政策生效",
-      "source": "IL Legislature",
-      "url": "https://www.ilga.gov/legislation/BillStatus.asp?DocNum=3294&GAID=17&DocTypeID=SB&SessionID=114&GA=104"
-    },
-    {
-      "country": "墨西哥",
-      "location": "全国",
-      "name": "墨西哥 CFE 太阳能+储能采购（结构性能源转型需求）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "CFE Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
-    },
-    {
-      "country": "墨西哥",
-      "location": "索诺拉州",
-      "name": "CFE Puerto Peñasco III — 300MW光伏 + 103MW储能（拉美最大太阳能项目）",
-      "capacity_mw": 300,
-      "deadline": "2027-07",
-      "status": "建设中",
-      "source": "CFE Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
-    },
-    {
-      "country": "墨西哥",
-      "location": "索诺拉州",
-      "name": "CFE Puerto Peñasco IV — 280MW光伏 + 储能（2026年2月开工）",
-      "capacity_mw": 280,
-      "deadline": "2028",
-      "status": "进行中",
-      "source": "CFE Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
-    },
-    {
-      "country": "墨西哥",
-      "location": "科阿韦拉州",
-      "name": "CFE Carbón II 光伏电站 — 376MW + 储能（2026开工）",
-      "capacity_mw": 376,
-      "deadline": "2028",
-      "status": "进行中",
-      "source": "CFE Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
-    },
-    {
-      "country": "墨西哥",
-      "location": "科阿韦拉州",
-      "name": "CFE Río Escondido 光伏 — 180MW + 储能",
-      "capacity_mw": 180,
-      "deadline": "2028",
-      "status": "进行中",
-      "source": "CFE Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
-    },
-    {
-      "country": "墨西哥",
-      "location": "全国",
-      "name": "SENER 批准20个私营可再生能源项目 — 3,320MW + 1,488MW储能",
-      "capacity_mw": 4808,
-      "deadline": "2026-2029",
-      "status": "已批准",
-      "source": "SENER Mexico",
-      "url": "https://www.proyectosmexico.gob.mx/proyecto_inversion/plan-de-fortalecimiento-y-expansion-del-sistema-electrico-nacional-generacion/"
+      "source": "SAM.gov / 州政府",
+      "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-power-procurement"
     }
   ],
   "south_america": [
     {
       "country": "巴西",
-      "location": "全国",
-      "name": "ANEEL 首次储能专项拍卖 — 2GW/8GWh BESS（历史性）",
+      "location": "全巴西",
+      "name": "SNEC PV & ES LATAM 圣保罗展（首次中国外举办）",
+      "capacity_mw": 0,
+      "deadline": "2026-03-24",
+      "status": "已举办",
+      "source": "行业动态",
+      "url": "https://en.clickpetroleoegas.com.br/brasil-arma-revolucao-da-energia-solar-primeiro-leilao-de-baterias-em-2026-vai-guardar-energia-do-sol-para-a-noite-mhbb01/"
+    },
+    {
+      "country": "巴西",
+      "location": "全巴西",
+      "name": "首次储能专项拍卖 LRCAP — 2GW/8GWh 电池储能（历史性）",
       "capacity_mw": 2000,
       "deadline": "2026-04-30",
       "status": "进行中",
-      "source": "MME / ANEEL",
+      "source": "MME Brazil",
       "url": "https://www.trade.gov/market-intelligence/brazil-energy-battery-storage-auction"
     },
     {
       "country": "巴西",
-      "location": "全国",
-      "name": "ANEEL 容量储备拍卖 LRCap — 火电+水电 12.5GW（已注册）",
-      "capacity_mw": 12500,
-      "deadline": "2026-03-01",
-      "status": "已开标",
-      "source": "ANEEL Brazil",
-      "url": "https://www.gov.br/aneel/pt-br/assuntos/leiloes"
-    },
-    {
-      "country": "巴西",
-      "location": "12个州",
-      "name": "ANEEL 输电拍卖 1/2026 — R$33亿 661km线路",
+      "location": "全巴西",
+      "name": "ANEEL 输电线路拍卖 No.1/2026 — R$33亿（5个标段12个州）",
       "capacity_mw": 0,
       "deadline": "2026年内",
       "status": "进行中",
@@ -768,248 +647,129 @@
       "url": "https://www.trade.gov/market-intelligence/brazil-energy-grid-infrastructure"
     },
     {
-      "country": "智利",
-      "location": "阿塔卡马",
-      "name": "智利 CNE 可再生能源+储能招标",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "CNE Chile",
-      "url": "https://www.cne.cl/normativas/electrica/licitaciones/"
-    },
-    {
-      "country": "阿根廷",
-      "location": "布宜诺斯艾利斯",
-      "name": "AlmaGBA 储能招标 — 713MW BESS（大布宜诺斯区，将推广至其他地区）",
-      "capacity_mw": 713,
-      "deadline": "2026年内",
-      "status": "已开标",
-      "source": "Gobierno Argentina",
-      "url": "https://www.argentina.gob.ar/economia/energia/energia-electrica/renovables"
-    },
-    {
-      "country": "哥伦比亚",
-      "location": "全国",
-      "name": "哥伦比亚 2025新增~2GW光伏，2027可靠性电力采购（储能关注）",
-      "capacity_mw": 2000,
-      "deadline": "2027",
-      "status": "规划中",
-      "source": "MinEnergía Colombia",
-      "url": "https://www.minenergia.gov.co/es/misional/energia-electrica/subastas-de-energia-renovable/"
-    },
-    {
-      "country": "秘鲁",
-      "location": "全国",
-      "name": "秘鲁可再生能源拍卖（新兴市场，国际投资者关注度提升）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "规划中",
-      "source": "OSINERGMIN Peru",
-      "url": "https://www.osinergmin.gob.pe/empresas/electricidad/Paginas/subastas.aspx"
-    },
-    {
-      "country": "危地马拉",
-      "location": "全国",
-      "name": "危地马拉 1,400MW 可再生能源拍卖（上轮超标4倍，1000MW vs 235MW需求）",
-      "capacity_mw": 1400,
-      "deadline": "2026-01",
-      "status": "进行中",
-      "source": "CNEE Guatemala",
-      "url": "https://www.cnee.gob.gt/wp/?page_id=232"
-    },
-    {
-      "country": "多米尼加",
-      "location": "全国",
-      "name": "多米尼加 32个光伏+风电+储能项目招标（2026年5月定标）",
-      "capacity_mw": 0,
-      "deadline": "2026-05",
-      "status": "进行中",
-      "source": "CNE 多米尼加",
-      "url": "https://www.cne.gob.do/transparencia/licitaciones/"
-    },
-    {
-      "country": "洪都拉斯",
-      "location": "全国",
-      "name": "洪都拉斯 多轮连续拍卖 — 1,500MW 可再生能源采购",
-      "capacity_mw": 1500,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "ENEE 洪都拉斯",
-      "url": "https://portalunico.iaip.gob.hn/portal/index.php?portal=1&portal_id=16"
-    },
-    {
       "country": "巴西",
-      "location": "全国",
-      "name": "ANEEL 分布式光伏 — 全球增长最快（已超50GW累计装机）",
-      "capacity_mw": 50000,
+      "location": "亚马逊/帕拉州",
+      "name": "ANEEL 孤立系统混合能源拍卖（光伏+储能+柴油）67MW",
+      "capacity_mw": 67,
+      "deadline": "已完成",
+      "status": "已开标",
+      "source": "ANEEL",
+      "url": "https://en.clickpetroleoegas.com.br/leilao-da-aneel-incluira-energia-solar-e-baterias-para-sistemas-isolados/"
+    },
+    {
+      "country": "智利",
+      "location": "全智利",
+      "name": "智利可再生能源+储能部署（拉美储能热点）",
+      "capacity_mw": 0,
       "deadline": "持续",
       "status": "进行中",
-      "source": "ANEEL Brazil",
-      "url": "https://www.gov.br/aneel/pt-br/assuntos/geracao-distribuida"
-    },
-    {
-      "country": "巴西",
-      "location": "全国",
-      "name": "巴西储能市场爆发 — 电池制造商加速布局",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "ANEEL Brazil",
-      "url": "https://www.gov.br/aneel/pt-br/assuntos/leiloes"
+      "source": "行业动态",
+      "url": "https://www.energy-storage.news"
     }
   ],
   "africa": [
     {
       "country": "南非",
-      "location": "自由州省",
-      "name": "BESIPPPP BW3 — 616MW/2,464MWh 电池储能（5个变电站）",
-      "capacity_mw": 616,
-      "deadline": "评标中",
-      "status": "评标中",
-      "source": "DMRE 南非",
-      "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"
-    },
-    {
-      "country": "南非",
-      "location": "全国",
-      "name": "REIPPPP BW7 — 1,760MW 光伏 8个项目已定标",
-      "capacity_mw": 1760,
-      "deadline": "已定标",
-      "status": "已定标",
-      "source": "DMRE 南非",
-      "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"
-    },
-    {
-      "country": "南非",
-      "location": "全国",
-      "name": "REIPPPP 总规划 — 3,940MW光伏 + 1,231MW储能（剩余额度）",
-      "capacity_mw": 5171,
-      "deadline": "2026-2028",
-      "status": "持续采购",
-      "source": "DMRE 南非",
-      "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"
-    },
-    {
-      "country": "南非",
-      "location": "全国",
-      "name": "Eskom BESS + 光伏混合采购 343MW/1,449MWh",
+      "location": "全南非",
+      "name": "Eskom 电池储能计划 — 343MW/1,449MWh + 60MW光伏（两期）",
       "capacity_mw": 343,
       "deadline": "分期推进",
       "status": "进行中",
-      "source": "Eskom IPP",
-      "url": "https://www.eskom.co.za/eskom-divisions/gx/independent-power-producer-solutions/"
+      "source": "Eskom",
+      "url": "https://www.esi-africa.com/renewable-energy/renewable-energy-procurement-on-utility-scale-for-2025/"
     },
     {
-      "country": "肯尼亚",
-      "location": "全国",
-      "name": "肯尼亚 EPRA 太阳能+风电采购（东非可再生能源领跑者）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "EPRA Kenya",
-      "url": "https://www.epra.go.ke/services/licensing/"
+      "country": "南非",
+      "location": "全南非",
+      "name": "REIPPPP 第七轮 — 1,760MW 光伏（8个项目已定标）",
+      "capacity_mw": 1760,
+      "deadline": "已定标",
+      "status": "已定标",
+      "source": "DMRE South Africa",
+      "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"
     },
     {
-      "country": "埃及",
-      "location": "全国",
-      "name": "埃及 NREA 太阳能招标（Benban后续 + 新建GW级电站）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "NREA Egypt",
-      "url": "http://nrea.gov.eg/en/Tenders"
+      "country": "南非",
+      "location": "北开普省",
+      "name": "Scatec 540MW光伏+225MW/1,140MWh储能混合项目",
+      "capacity_mw": 540,
+      "deadline": "建设中",
+      "status": "建设中",
+      "source": "行业动态",
+      "url": "https://www.pv-tech.org/south-africa-opens-seventh-bidding-window-of-reipppp-seeks-1-8gw-solar-pv/"
     },
     {
-      "country": "摩洛哥",
-      "location": "全国",
-      "name": "摩洛哥 MASEN Noor 太阳能计划（GW级CSP+PV混合项目）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "MASEN Morocco",
-      "url": "https://www.masen.ma/en/projects"
+      "country": "南非",
+      "location": "自由省",
+      "name": "BESIPPPP 第三轮 — 616MW/2,464MWh 电池储能（5个变电站）",
+      "capacity_mw": 616,
+      "deadline": "评标中",
+      "status": "评标中",
+      "source": "DMRE South Africa",
+      "url": "https://www.dmre.gov.za/energy-resources/reippp-programme"
     }
   ],
   "oceania": [
     {
       "country": "澳大利亚",
       "location": "全国NEM",
-      "name": "CIS Tender 8 — 4GW/16GWh 储能采购（联邦）",
-      "capacity_mw": 4000,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "DCCEEW",
+      "name": "CIS Tender 8 — 可再生能源+储能（登记中）",
+      "capacity_mw": 0,
+      "deadline": "2026-02-06",
+      "status": "已截止",
+      "source": "DCCEEW Australia",
+      "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"
+    },
+    {
+      "country": "澳大利亚",
+      "location": "西澳WEM",
+      "name": "CIS Tender 5 — 1,600MW 可再生能源（西澳，评标中）",
+      "capacity_mw": 1600,
+      "deadline": "2026-03-31",
+      "status": "评标中",
+      "source": "DCCEEW Australia",
+      "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"
+    },
+    {
+      "country": "澳大利亚",
+      "location": "西澳WEM",
+      "name": "CIS Tender 6 — 2,400MWh 调度容量（西澳，评标中）",
+      "capacity_mw": 0,
+      "deadline": "2026-03-31",
+      "status": "评标中",
+      "source": "DCCEEW Australia",
       "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"
     },
     {
       "country": "澳大利亚",
       "location": "全国NEM",
-      "name": "CIS Tender 7 — 5GW 可再生能源发电（评标中）",
+      "name": "CIS Tender 7 — 5GW 可再生能源发电（评标中，5月公布）",
       "capacity_mw": 5000,
       "deadline": "2026-05-31",
       "status": "评标中",
-      "source": "DCCEEW",
+      "source": "DCCEEW Australia",
       "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders"
     },
     {
       "country": "澳大利亚",
       "location": "南澳",
-      "name": "SA FERM — 700MW 长时储能拍卖（8小时+）",
+      "name": "南澳 700MW 长时储能拍卖（8小时+，首轮）",
       "capacity_mw": 700,
       "deadline": "2026-05-31",
       "status": "评标中",
-      "source": "SA Gov FERM",
-      "url": "https://www.energymining.sa.gov.au/industry/modern-energy/firm-exportable-renewable-mechanism"
+      "source": "SA Government",
+      "url": "https://reneweconomy.com.au/south-australia-unveils-first-auction-as-worlds-most-advanced-renewables-grid-seeks-long-duration-storage/"
     },
     {
       "country": "澳大利亚",
       "location": "新南威尔士",
-      "name": "NSW LTESA — 6个BESS项目 12GWh 长时储能（已定标）",
+      "name": "NSW 长时储能 Tender 6 — 6个BESS项目12GWh（已定标）",
       "capacity_mw": 0,
       "deadline": "已定标",
       "status": "已定标",
-      "source": "AEMO Services",
+      "source": "NSW Energy",
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
-    },
-    {
-      "country": "澳大利亚",
-      "location": "新南威尔士",
-      "name": "New England BESS 200MW/400MWh（Acen，已注册AEMO）",
-      "capacity_mw": 200,
-      "deadline": "2026-02-18",
-      "status": "已注册",
-      "source": "AEMO",
-      "url": "https://aemo.com.au/en/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/generation-information"
-    },
-    {
-      "country": "新西兰",
-      "location": "全国",
-      "name": "新西兰 MBIE 可再生能源投资计划（2030目标100%可再生电力）",
-      "capacity_mw": 0,
-      "deadline": "2026年内",
-      "status": "进行中",
-      "source": "行业动态",
-      "url": "https://www.mbie.govt.nz/building-and-energy/energy-and-natural-resources/energy-generation-and-markets/renewable-energy/"
-    },
-    {
-      "country": "新西兰",
-      "location": "全国",
-      "name": "新西兰 Electricity Authority — 屋顶光伏出口限制10kW新规",
-      "capacity_mw": 0,
-      "deadline": "2026-04",
-      "status": "已发布",
-      "source": "EA New Zealand",
-      "url": "https://www.ea.govt.nz/news/eye-on-electricity/default-export-energy-limit-for-distributed-energy-resources/"
-    },
-    {
-      "country": "澳大利亚",
-      "location": "全国",
-      "name": "Google 300MW/30GWh 铁空气电池储能（世界最大多日储能）",
-      "capacity_mw": 300,
-      "deadline": "2026-2028",
-      "status": "建设中",
-      "source": "AEMO",
-      "url": "https://aemo.com.au/en/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/generation-information"
     }
-  ]
+  ],
+  "updated_at": "2026-04-13 02:54"
 }
