@@ -294,16 +294,6 @@
     },
     {
       "country": "印度",
-      "location": "奥里萨邦",
-      "name": "SECI 125MW/500MWh 奥里萨邦独立储能系统（VGF）",
-      "capacity_mw": 125,
-      "deadline": "2026-03-01",
-      "status": "已开标",
-      "source": "SECI India",
-      "url": "https://www.seci.co.in/tenders"
-    },
-    {
-      "country": "印度",
       "location": "全印度",
       "name": "SECI 80MW 短期固定电力开放准入采购",
       "capacity_mw": 80,
@@ -771,5 +761,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-04-14 02:47"
+  "updated_at": "2026-04-15 02:45"
 }
