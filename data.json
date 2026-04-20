@@ -298,7 +298,7 @@
       "name": "SECI 80MW 短期固定电力开放准入采购",
       "capacity_mw": 80,
       "deadline": "2026-04-20",
-      "status": "进行中",
+      "status": "已开标",
       "source": "SECI India",
       "url": "https://www.seci.co.in/tenders"
     },
@@ -761,5 +761,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-04-19 02:54"
+  "updated_at": "2026-04-20 02:55"
 }
