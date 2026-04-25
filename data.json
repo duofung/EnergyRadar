@@ -308,7 +308,7 @@
       "name": "NHPC 30.93MW 哈里亚纳邦政府屋顶光伏项目",
       "capacity_mw": 31,
       "deadline": "2026-04-25",
-      "status": "进行中",
+      "status": "已开标",
       "source": "SECI India",
       "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
     },
@@ -761,5 +761,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-04-24 02:51"
+  "updated_at": "2026-04-25 02:39"
 }
