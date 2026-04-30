@@ -318,7 +318,7 @@
       "name": "CMPDI 25MW 丹巴德太阳能电站项目",
       "capacity_mw": 25,
       "deadline": "2026-04-30",
-      "status": "进行中",
+      "status": "已开标",
       "source": "SECI India",
       "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
     },
@@ -761,5 +761,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-04-29 03:27"
+  "updated_at": "2026-04-30 03:28"
 }
