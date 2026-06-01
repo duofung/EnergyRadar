@@ -6,7 +6,7 @@
       "name": "BNetzA 屋顶光伏招标 第二轮",
       "capacity_mw": 367,
       "deadline": "2026-06-01",
-      "status": "进行中",
+      "status": "已截止",
       "source": "Bundesnetzagentur",
       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Solaranlagen2/start.html"
     },
@@ -761,5 +761,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-05-31 04:04"
+  "updated_at": "2026-06-01 04:18"
 }
