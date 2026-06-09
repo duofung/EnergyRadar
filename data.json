@@ -294,16 +294,6 @@
     },
     {
       "country": "印度",
-      "location": "哈里亚纳邦",
-      "name": "NHPC 30.93MW 哈里亚纳邦政府屋顶光伏项目",
-      "capacity_mw": 31,
-      "deadline": "2026-04-25",
-      "status": "已开标",
-      "source": "SECI India",
-      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
-    },
-    {
-      "country": "印度",
       "location": "贾坎德邦",
       "name": "CMPDI 25MW 丹巴德太阳能电站项目",
       "capacity_mw": 25,
@@ -751,5 +741,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-06-08 04:14"
+  "updated_at": "2026-06-09 03:42"
 }
