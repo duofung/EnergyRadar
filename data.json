@@ -294,16 +294,6 @@
     },
     {
       "country": "印度",
-      "location": "贾坎德邦",
-      "name": "CMPDI 25MW 丹巴德太阳能电站项目",
-      "capacity_mw": 25,
-      "deadline": "2026-04-30",
-      "status": "已开标",
-      "source": "SECI India",
-      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
-    },
-    {
-      "country": "印度",
       "location": "旁遮普邦",
       "name": "北方铁路 2.15MW 旁遮普邦车站光伏项目",
       "capacity_mw": 2,
@@ -741,5 +731,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-06-13 03:59"
+  "updated_at": "2026-06-14 04:18"
 }
