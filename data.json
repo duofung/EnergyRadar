@@ -293,16 +293,6 @@
       "url": "https://vas-co.com/en/pv-out-2026-en/"
     },
     {
-      "country": "印度",
-      "location": "旁遮普邦",
-      "name": "北方铁路 2.15MW 旁遮普邦车站光伏项目",
-      "capacity_mw": 2,
-      "deadline": "2026-05-10",
-      "status": "已开标",
-      "source": "SECI India",
-      "url": "https://www.mercomindia.com/category/solar/tenders-auctions"
-    },
-    {
       "country": "越南",
       "location": "全越南",
       "name": "屋顶光伏余电上网草案 — 上限拟提至50%（征求意见中）",
@@ -731,5 +721,5 @@
       "url": "https://www.energy.nsw.gov.au/nsw-plans-and-progress/major-state-projects/electricity-infrastructure-roadmap/asl-tenders"
     }
   ],
-  "updated_at": "2026-06-23 03:46"
+  "updated_at": "2026-06-24 03:49"
 }
